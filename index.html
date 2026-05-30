@@ -1,1654 +1,1680 @@
-﻿<!DOCTYPE html>
-<html class="no-js" lang="en">
-  <head>
-    <title>Manjeet Kumar</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="author" content="ThemeZaa" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos."
-    />
-    <!-- favicon icon -->
-    <link rel="shortcut icon" href="images/" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="72x72"
-      href="images/apple-touch-icon-72x72.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="images/apple-touch-icon-114x114.png"
-    />
-    <!-- google fonts preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- style sheets and font icons  -->
-    <link rel="stylesheet" href="css/vendors.min.css" />
-    <link rel="stylesheet" href="css/icon.min.css" />
-    <link rel="stylesheet" href="css/mycss.css" />
-    <link rel="stylesheet" href="css/style.min.css" />
-    <link rel="stylesheet" href="css/responsive.min.css" />
-    <link rel="stylesheet" href="demos/freelancer/freelancer.css" />
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manjeet Kumar | Java Full Stack Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00d4ff;
+            --primary-glow: rgba(0, 212, 255, 0.4);
+            --secondary: #a855f7;
+            --secondary-glow: rgba(168, 85, 247, 0.4);
+            --accent: #f472b6;
+            --dark: #0a0a0f;
+            --darker: #050508;
+            --card: rgba(20, 20, 35, 0.7);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --success: #22c55e;
+            --warning: #f59e0b;
+        }
 
-  <body data-mobile-nav-style="classic" class="custom-cursor">
-    <!-- start cursor -->
-    <div class="cursor-page-inner">
-      <div class="circle-cursor circle-cursor-inner"></div>
-      <div class="circle-cursor circle-cursor-outer"></div>
-    </div>
-    <!-- end cursor -->
-    <!-- start header -->
-    <header>
-      <!-- start navigation -->
-      <nav
-        class="navbar navbar-expand-lg header-transparent bg-transparent disable-fixed"
-        data-header-hover="dark"
-      >
-        <div class="container-fluid">
-          <div class="col-auto col-lg-2 me-lg-0 me-auto">
-            <a class="navbar-brand" href="manjeet_kumar.html">
-              <img
-                src="images/index-logo-white.png"
-                data-at2x="images/index-logo-white@2x.png"
-                alt=""
-                class="default-logo"
-              />
-              <img
-                src="images/index-logo-white.png"
-                data-at2x="images/index-logo-white@2x.png"
-                alt=""
-                class="alt-logo"
-              />
-              <img
-                src="images/index-logo-white.png"
-                data-at2x="images/index-logo-white@2x.png"
-                alt=""
-                class="mobile-logo"
-              />
-            </a>
-          </div>
-          <div class="col-auto col-lg-3 text-end lg-pe-0">
-            <div class="header-icon">
-              <a href="" class="text-white"
-                ><span class="__cf_email__" data-cfemail="">Manjeet-kumar</span></a
-              >
-              <div
-                class="header-push-button hamburger-push-button icon sm-pe-15px"
-              >
-                <div class="push-button">
-                  <span></span>
-                  <span></span>
-                <span></span>
-                </div>
-              </div>
-            </div>
-          </div>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--darker);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== ANIMATED BACKGROUND ===== */
+        .bg-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -2;
+            background: var(--darker);
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+        }
+
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: orbFloat 20s ease-in-out infinite;
+        }
+        .orb-1 { width: 400px; height: 400px; background: var(--primary-glow); top: 10%; left: 10%; animation-delay: 0s; }
+        .orb-2 { width: 300px; height: 300px; background: var(--secondary-glow); top: 60%; right: 10%; animation-delay: -7s; }
+        .orb-3 { width: 250px; height: 250px; background: rgba(244, 114, 182, 0.3); bottom: 10%; left: 40%; animation-delay: -14s; }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 30px) scale(0.9); }
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 1rem 5%;
+            background: rgba(5, 5, 8, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo::before {
+            content: '<';
+            color: var(--primary);
+            -webkit-text-fill-color: var(--primary);
+        }
+        .logo::after {
+            content: '/>';
+            color: var(--secondary);
+            -webkit-text-fill-color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            position: relative;
+            transition: color 0.3s;
+            padding: 0.3rem 0;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s;
+            border-radius: 2px;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7rem 5% 4rem;
+            position: relative;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-left {
+            animation: fadeInLeft 1s ease;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 1.2rem;
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .hero-badge .pulse {
+            width: 8px; height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 0.8rem;
+        }
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            min-height: 2rem;
+        }
+        .cursor {
+            display: inline-block;
+            width: 3px; height: 1.4em;
+            background: var(--primary);
+            margin-left: 2px;
+            animation: blink 1s infinite;
+            vertical-align: text-bottom;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 550px;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-glow {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--darker);
+            box-shadow: 0 0 30px var(--primary-glow);
+        }
+        .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 50px var(--primary-glow), 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--card-border);
+        }
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+        }
+
+        /* Hero Right - 3D Card Stack */
+        .hero-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            animation: fadeInRight 1s ease 0.3s both;
+        }
+
+        .tech-stack-3d {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            transform-style: preserve-3d;
+            animation: rotate3d 25s linear infinite;
+        }
+        @keyframes rotate3d {
+            0% { transform: rotateY(0deg) rotateX(10deg); }
+            100% { transform: rotateY(360deg) rotateX(10deg); }
+        }
+
+        .tech-orbit {
+            position: absolute;
+            width: 60px; height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            font-size: 1.8rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+        .tech-orbit:nth-child(1) { color: #f89820; transform: rotateY(0deg) translateZ(140px); }
+        .tech-orbit:nth-child(2) { color: #6db33f; transform: rotateY(60deg) translateZ(140px); }
+        .tech-orbit:nth-child(3) { color: #00d4ff; transform: rotateY(120deg) translateZ(140px); }
+        .tech-orbit:nth-child(4) { color: #a855f7; transform: rotateY(180deg) translateZ(140px); }
+        .tech-orbit:nth-child(5) { color: #f472b6; transform: rotateY(240deg) translateZ(140px); }
+        .tech-orbit:nth-child(6) { color: #f7df1e; transform: rotateY(300deg) translateZ(140px); }
+
+        .tech-center {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px; height: 100px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--darker);
+            box-shadow: 0 0 40px var(--primary-glow);
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 40px var(--primary-glow); }
+            50% { box-shadow: 0 0 70px var(--primary-glow), 0 0 100px var(--secondary-glow); }
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--card-border);
+        }
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 0.3rem;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        section {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-text p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 1.2rem;
+        }
+        .about-text strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .feature-box {
+            padding: 1.2rem;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s;
+        }
+        .feature-box:hover {
+            border-color: rgba(0, 212, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .feature-icon {
+            width: 45px; height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .feature-icon.cyan { background: rgba(0, 212, 255, 0.1); color: var(--primary); }
+        .feature-icon.purple { background: rgba(168, 85, 247, 0.1); color: var(--secondary); }
+        .feature-icon.pink { background: rgba(244, 114, 182, 0.1); color: var(--accent); }
+        .feature-icon.green { background: rgba(34, 197, 94, 0.1); color: var(--success); }
+        .feature-box span {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Code Window */
+        .code-window {
+            background: var(--dark);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+        .code-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1rem;
+            background: rgba(255,255,255,0.02);
+            border-bottom: 1px solid var(--card-border);
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+        .code-title {
+            margin-left: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .code-body {
+            padding: 1.5rem;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+        .code-line { display: flex; }
+        .line-num {
+            color: var(--text-muted);
+            width: 30px;
+            text-align: right;
+            margin-right: 1rem;
+            opacity: 0.5;
+        }
+        .kw { color: #c678dd; }
+        .str { color: #98c379; }
+        .fn { color: #61afef; }
+        .cm { color: #5c6370; font-style: italic; }
+        .cls { color: #e5c07b; }
+        .var { color: #d19a66; }
+
+        /* ===== SKILLS ===== */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.8rem;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .skill-card:hover::before { opacity: 1; }
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(0, 212, 255, 0.05);
+        }
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .skill-icon {
+            width: 50px; height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+        .skill-icon.java { background: rgba(244, 114, 182, 0.1); color: var(--accent); }
+        .skill-icon.api { background: rgba(0, 212, 255, 0.1); color: var(--primary); }
+        .skill-icon.db { background: rgba(168, 85, 247, 0.1); color: var(--secondary); }
+        .skill-icon.cloud { background: rgba(34, 197, 94, 0.1); color: var(--success); }
+        .skill-icon.front { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+        .skill-icon.tool { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .skill-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .skill-tag {
+            padding: 0.35rem 0.7rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            transition: all 0.3s;
+        }
+        .skill-tag:hover {
+            background: rgba(0, 212, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.2);
+            color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        /* ===== EXPERIENCE ===== */
+        .exp-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .exp-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .exp-card::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 150px; height: 150px;
+            background: radial-gradient(circle, var(--primary-glow), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .exp-card:hover::after { opacity: 0.3; }
+        .exp-card:hover {
+            border-color: rgba(0, 212, 255, 0.15);
+            transform: translateX(5px);
+        }
+
+        .exp-timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .exp-dot {
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 0 15px var(--primary-glow);
+            flex-shrink: 0;
+        }
+        .exp-line {
+            width: 2px;
+            flex-grow: 1;
+            background: linear-gradient(to bottom, var(--primary), transparent);
+            border-radius: 2px;
+        }
+        .exp-date {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .exp-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+        .exp-company {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .exp-company i { font-size: 0.8rem; }
+        .exp-list {
+            list-style: none;
+        }
+        .exp-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .exp-list li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0.9rem;
+            width: 8px; height: 8px;
+            border-radius: 2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transform: rotate(45deg);
+        }
+
+        /* ===== PROJECTS ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+        .project-visual {
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .project-visual.bg-bank {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1));
+        }
+        .project-visual.bg-realestate {
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.1), rgba(0, 212, 255, 0.1));
+        }
+        .project-visual.bg-asset {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(0, 212, 255, 0.1));
+        }
+        .project-visual.bg-payment {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(244, 114, 182, 0.1));
+        }
+        .project-icon-main {
+            font-size: 3.5rem;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 20px var(--primary-glow));
+        }
+        .project-visual .floating-icons {
+            position: absolute;
+            width: 100%; height: 100%;
+        }
+        .floating-icons .fi {
+            position: absolute;
+            font-size: 1.2rem;
+            opacity: 0.3;
+            animation: floatIcon 4s ease-in-out infinite;
+        }
+        .fi-1 { top: 20%; left: 15%; animation-delay: 0s; }
+        .fi-2 { top: 60%; right: 15%; animation-delay: 1s; }
+        .fi-3 { bottom: 20%; left: 40%; animation-delay: 2s; }
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .project-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        .project-body h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .project-body p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .project-tech-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+        .pt-tag {
+            padding: 0.25rem 0.6rem;
+            background: rgba(0, 212, 255, 0.06);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        .project-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--card-border);
+            display: flex;
+            gap: 1rem;
+        }
+        .project-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .project-badge i { color: var(--success); font-size: 0.7rem; }
+
+        /* ===== EDU & CERTS ===== */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .edu-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s;
+        }
+        .edu-card:hover {
+            border-color: rgba(0, 212, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        .edu-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .edu-card-icon {
+            width: 55px; height: 55px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .edu-card-icon.grad { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(168, 85, 247, 0.15)); color: var(--primary); }
+        .edu-card-icon.cert { background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(245, 158, 11, 0.15)); color: var(--accent); }
+        .edu-card h3 {
+            font-size: 1.2rem;
+        }
+        .edu-card h3 span {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-top: 0.2rem;
+        }
+
+        .edu-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--card-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .edu-item:last-child { border-bottom: none; }
+        .edu-item-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        .edu-item-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .edu-year {
+            padding: 0.3rem 0.7rem;
+            background: rgba(0, 212, 255, 0.08);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .cert-row {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .cert-row:last-child { border-bottom: none; }
+        .cert-row i {
+            color: #fbbf24;
+            font-size: 1.1rem;
+        }
+        .cert-row span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-wrapper {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, var(--primary-glow), transparent 40%);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .contact-wrapper h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .contact-wrapper p {
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            font-size: 1.05rem;
+            position: relative;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .contact-item {
+            padding: 1.2rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .contact-item:hover {
+            border-color: var(--primary);
+            background: rgba(0, 212, 255, 0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        .contact-item span {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        footer .heart {
+            color: #ef4444;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero-left { order: 2; }
+            .hero-right { order: 1; }
+            .hero-desc { margin: 0 auto 2rem; }
+            .hero-buttons { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .tech-stack-3d { width: 260px; height: 260px; }
+            .tech-orbit { width: 50px; height: 50px; font-size: 1.4rem; }
+            .tech-orbit:nth-child(n) { transform: rotateY(calc(var(--i, 0) * 60deg)) translateZ(110px); }
+            .about-grid { grid-template-columns: 1fr; }
+            .skills-wrapper { grid-template-columns: repeat(2, 1fr); }
+            .projects-grid { grid-template-columns: 1fr; }
+            .edu-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            .hero h1 { font-size: 2.5rem; }
+            .section-header h2 { font-size: 2rem; }
+            .skills-wrapper { grid-template-columns: 1fr; }
+            .exp-card { grid-template-columns: 1fr; }
+            .exp-timeline { display: none; }
+            .contact-wrapper { padding: 2rem; }
+            .contact-grid { grid-template-columns: 1fr 1fr; }
+            .about-features { grid-template-columns: 1fr; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <canvas class="bg-canvas" id="particleCanvas"></canvas>
+    <div class="bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="logo">MK</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
         </div>
-      </nav>
-      <!-- end navigation -->
-      <!-- start hamburger menu -->
-      <div
-        class="push-menu hamburger-nav header-dark hamburger-menu-half bg-dark-gray md-w-60 sm-w-100"
-        style="background-image: url(images/demo-gym-and-fitness-menu-bg.jpg)"
-      >
-        <span class="close-menu text-dark-gray bg-white"
-          ><i class="fa-solid fa-xmark"></i
-        ></span>
-        <div
-          class="d-flex flex-column justify-content-center h-100 ps-18 pb-12 xxl-p-12 sm-p-20px"
-        >
-          <div
-            class="hamburger-menu menu-list-wrapper w-80 lg-w-100 lg-no-margin sm-mt-auto sm-mb-auto"
-            data-scroll-options='{ "theme": "light" }'
-          >
-            <ul class="menu-item-list fw-500 p-0">
-              <li class="menu-item">
-                <a href="index.html#home" class="inner-link nav-link">Home</a>
-              </li>
-              <li class="menu-item">
-                <a href="index.html#about" class="inner-link nav-link">About</a>
-              </li>
-              <li class="menu-item">
-                <a href="index.html#work" class="inner-link nav-link">Work</a>
-              </li>
-              <li class="menu-item">
-                <a href="index.html#experience" class="inner-link nav-link"
-                  >Tech Stack</a
-                >
-              </li>
-              <li class="menu-item">
-                <a href="index.html#expertise" class="inner-link nav-link"
-                  >Expertise</a
-                >
-              </li>
-              <li class="menu-item">
-                <a href="index.html#awards" class="inner-link nav-link"
-                  >Awards</a
-                >
-              </li>
-              <li class="menu-item">
-                <a href="index.html#contact" class="inner-link nav-link"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="w-90 xxl-w-100 d-none d-lg-inline-block">
-            <div class="row row-cols-1 row-cols-xl-2 menu-address">
-              <div class="col">
-                <span class="text-white fs-16 ls-05px"
-                  >Contact information</span
-                >
-                <div
-                  class="h-1px w-90 lg-w-100 bg-white-transparent-extra-light mt-15px mb-15px"
-                ></div>
-                <p class="fs-15 lh-26 w-90 xl-w-100 text-white fw-300">India</p>
-              </div>
-              <div class="col">
-                <span class="text-white fs-16 ls-05px">Connect with us</span>
-                <div
-                  class="h-1px w-90 xxl-w-100 bg-white-transparent-extra-light mt-15px mb-15px"
-                ></div>
-                <p class="fs-15 lh-28 w-90 xxl-w-100 lg-mb-0 fw-300">
-                  <a href="" class="d-block text-white text-white-hover"
-                    ><span class="__cf_email__" data-cfemail=""
-                      >manjeetkumar050896@gmail.com</span
-                    ></a
-                  >
-                  <!-- <a
-                                    href="tel:12345678910" class="text-white text-white-hover">+91</a> -->
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <div class="pulse"></div>
+                    Available for Opportunities
+                </div>
+                <h1>Hi, I'm <span class="gradient-text">Manjeet Kumar</span></h1>
+                <div class="hero-subtitle">
+                    <span id="typewriter"></span><span class="cursor"></span>
+                </div>
+                <p class="hero-desc">
+                    Results-driven <strong>Java Full Stack Developer</strong> with 3+ years of experience designing scalable enterprise applications, banking systems, and cloud-hosted platforms using Java, Spring Boot, and Microservices.
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end hamburger menu -->
-    </header>
-    <!-- end header -->
-    <!-- start section -->
-    <section
-      style="background-color: #130e0f"
-      class="full-screen magic-cursor ipad-top-space-margin md-p-0 round-cursor bg-base-color bg-sliding-line overflow-hidden position-relative md-h-850px sm-h-750px"
-      id="home"
-    >
-      <div
-        id="particles-style-01"
-        class="h-100 position-absolute left-0px top-0 w-100"
-        data-particle="true"
-        data-particle-options='{"particles": {"number": {"value": 15,"density": {"enable": true,"value_area": 2000}},"color": {"value": ["#000000", "#000000", "#000000", "#000000", "#000000"]},"shape": {"type": "circle","stroke":{"width":0,"color":"#000000"}},"opacity": {"value": 0.3,"random": false,"anim": {"enable": false,"speed": 1,"sync": false}},"size": {"value": 8,"random": true,"anim": {"enable": false,"sync": true}},"line_linked":{"enable":false,"distance":0,"color":"#ffffff","opacity":0.4,"width":1},"move": {"enable": true,"speed":1,"direction": "right","random": false,"straight": false}},"interactivity": {"detect_on": "canvas","events": {"onhover": {"enable": false,"mode": "repulse"},"onclick": {"enable": false,"mode": "push"},"resize": true}},"retina_detect": false}'
-      ></div>
-      <img
-        src="images/demo-ebook-shape-02.webp"
-        class="position-absolute top-35 left-minus-100px left-img d-none d-md-block"
-        data-bottom-top="transform: translateY(-50px)"
-        data-top-bottom="transform: translateY(50px)"
-        alt=""
-      />
-      <div class="container h-100">
-        <div class="row align-items-start align-items-lg-center h-100">
-          <div
-            class="col-xl-6 col-lg-8 md-pt-15"
-            data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
-          >
-            <div
-              style="font-size: 120px"
-              class="fs-150 sm-fs-120 lh-110 text-white fw-700 ls-minus-5px"
-            >
-              <span class="text-outline">Manjeet</span
-              ><i
-                class="fas fa-arrow-up-right icon-very-medium lh-0 ms-5px"
-              ></i>
-            </div>
-            <div class="ps-20">
-              <div
-                style="font-size: 120px"
-                class="fs-150 sm-fs-120 text-white fw-700 ls-minus-5px"
-              >
-                kumar
-              </div>
-              <div
-                class="top-minus-40px sm-top-minus-20px right-minus-3px sm-right-0px position-relative"
-              >
-                <!-- <span class="text-white fs-13 lh-36 fw-500 bg-black ps-20px pe-20px text-uppercase d-inline-block ls-1px mb-25px ms-5px">Awards winner freelancer</span> -->
-                <!-- <div class="fs-19 lh-26 text-black fw-500 w-65 md-w-70 sm-w-100">A creative director based in london. Create identities and <span class="fw-700 text-decoration-line-bottom-medium text-black">digital experiences.</span></div> -->
-              </div>
-            </div>
-          </div>
-          <div
-            class="position-absolute right-100px bottom-minus-100px w-55 md-w-60 xs-w-100 md-right-150px xs-right-0px"
-          >
-            <img
-              src="images/demo-freelancer-03.png"
-              class="position-absolute top-20 right-minus-50px"
-              alt=""
-              data-bottom-top="transform: translateY(-150px)"
-              data-top-bottom="transform: translateY(150px)"
-            />
-            <img
-              src="images/demo-freelancer-04.png"
-              class="position-absolute top-50 left-150px z-index-9 animation-float"
-              alt=""
-              data-bottom-top="transform: translateY(-50px)"
-              data-top-bottom="transform: translateY(50px)"
-            />
-            <div class="atropos" data-atropos>
-              <div class="atropos-scale">
-                <div class="atropos-rotate">
-                  <div class="atropos-inner text-center">
-                    <div
-                      data-atropos-offset="-5"
-                      class="position-absolute left-0px right-0px"
-                    >
-                      <img src="images/demo-freelancer-01.png" alt="" />
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-glow">
+                        <i class="fas fa-rocket"></i> View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i> Hire Me
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-num">3+</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
-                    <img
-                      data-atropos-offset="5"
-                      class="position-relative"
-                      src="images/manjeet.png"
-                      alt=""
-                    />
-                  </div>
+                    <div class="stat">
+                        <div class="stat-num">10+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">5+</div>
+                        <div class="stat-label">Core Technologies</div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+            <div class="hero-right">
+                <div class="tech-stack-3d">
+                    <div class="tech-orbit" style="--i:0"><i class="fab fa-java"></i></div>
+                    <div class="tech-orbit" style="--i:1"><i class="fas fa-leaf"></i></div>
+                    <div class="tech-orbit" style="--i:2"><i class="fab fa-aws"></i></div>
+                    <div class="tech-orbit" style="--i:3"><i class="fab fa-docker"></i></div>
+                    <div class="tech-orbit" style="--i:4"><i class="fab fa-vuejs"></i></div>
+                    <div class="tech-orbit" style="--i:5"><i class="fab fa-js"></i></div>
+                    <div class="tech-center"><i class="fas fa-code"></i></div>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
-    <!-- end section -->
-    <!-- start section -->
-    <section
-      id="about"
-      class="big-section bg-gradient-top-very-light-gray pb-0 sm-pt-0"
-    >
-      <div
-        class="overlap-section mb-2 top-minus-40px position-relative z-index-9 md-mb-0"
-      >
-        <div
-          class="fs-335 text-white fw-700 ls-minus-10px md-ls-minus-5px text-end text-shadow-large"
-          style="margin-right: 6px"
-        >
-          Developer
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div
-              class="row align-items-center mb-6"
-              data-anime='{ "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
-            >
-              <div class="col-10">
-                <span
-                  class="text-base-color fw-700 text-uppercase fs-14 ls-05px"
-                  >About Manjeet Kumar</span
-                >
-              </div>
-              <div class="col-2 text-end">
-                <span class="text-base-color fs-14 fw-700">01</span>
-              </div>
-              <div class="col-12 mt-5px">
-                <div
-                  class="separator-line-2px w-100 d-block bg-base-color"
-                ></div>
-              </div>
-            </div>
-            <div class="row mb-6">
-              <div
-                class="col-xl-4 col-lg-5"
-                data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
-              >
-                <h4 class="fw-700 ls-minus-1px mb-20px">
-                  Full-stack Developer focused on backend and cloud
-                  technologies.
-                </h4>
-                <p class="w-85 lg-w-100">
-                  Experienced in building scalable Laravel applications,
-                  integrating APIs, and maintaining systems on AWS
-                  infrastructure.
-                </p>
-              </div>
-              <div
-                class="col-xl-8 col-lg-7"
-                data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
-              >
-                <div
-                  class="row align-items-center border-bottom border-color-light-medium-gray mb-30px pb-30px"
-                >
-                  <div class="col-md-3">
-                    <div class="fs-18 fw-600">Discover</div>
-                  </div>
-                  <div class="col-md-9 last-paragraph-no-margin">
-                    <p>
-                      Experienced in full-stack development using Laravel,
-                      Vue.js, MySQL, and AWS. I develop and support robust
-                      applications with performance in mind.
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="row align-items-center border-bottom border-color-light-medium-gray mb-30px pb-30px"
-                >
-                  <div class="col-md-3">
-                    <div class="fs-18 fw-600">Prototyping</div>
-                  </div>
-                  <div class="col-md-9 last-paragraph-no-margin">
-                    <p>
-                      Designed and developed multiple enterprise solutions for
-                      the Art of Living Foundation. Focused on clean
-                      architecture, usability, and efficiency.
-                    </p>
-                  </div>
-                </div>
-                <div class="row align-items-center">
-                  <div class="col-md-3">
-                    <div class="fs-18 fw-600">Creation</div>
-                  </div>
-                  <div class="col-md-9 last-paragraph-no-margin">
-                    <p>
-                      Contributed to Baker Real Estate’s project with backend
-                      logic, Redis caching, and API integration using Laravel
-                      and AWS EC2/S3 stack.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="row row-cols-1 row-cols-lg-4 row-cols-md-2"
-              data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
-            >
-              <div class="col last-paragraph-no-margin lg-mb-60px">
-                <span class="fw-600">Expertise</span>
-                <div
-                  class="tech-stack-badges mt-4"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <span class="badge bg-dark text-white me-2 mb-2 px-3 py-2"
-                    >Laravel</span
-                  >
-                  <span class="badge bg-primary text-white me-2 mb-2 px-3 py-2"
-                    >Vue.js</span
-                  >
-                  <span class="badge bg-danger text-white me-2 mb-2 px-3 py-2"
-                    >AWS</span
-                  >
-                  <span class="badge bg-info text-dark me-2 mb-2 px-3 py-2"
-                    >REST APIs</span
-                  >
-                  <span class="badge bg-warning text-dark me-2 mb-2 px-3 py-2"
-                    >MySQL</span
-                  >
-                  <span class="badge bg-success text-dark me-2 mb-2 px-3 py-2"
-                    >Java</span
-                  >
-                </div>
-                <!-- <p>PHP, Laravel, Vue.js, Java, SQL, JavaScript, AWS, API Integration</p> -->
-              </div>
-              <div class="col last-paragraph-no-margin lg-mb-60px">
-                <span class="fw-600">Born in</span>
-                <p>Patna, Bihar, India</p>
-              </div>
-              <div class="col last-paragraph-no-margin lg-mb-60px">
-                <span class="fw-600">Education</span>
-                <p>
-                  Master of Computer Application<br />Anugrah Narayan College,
-                  Patna
-                </p>
-              </div>
-              <div class="col last-paragraph-no-margin">
-                <span class="fw-600">Certifications</span>
-                <p>
-                  AWS Technical Essentials, Java Full Stack (JSpiders,
-                  Bangalore)
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div
-      class="row align-items-center mb-6"
-      data-anime='{ "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
-    >
-      <div class="col-12 mt-5px">
-        <div class="separator-line-2px w-100 d-block bg-base-color"></div>
-      </div>
-    </div>
-    <!-- end section -->
-    <section
-      id="experience"
-      class="bg-base-color bg-sliding-line position-relative pb-0"
-      style="background-color: #0e1213"
-    >
-      <div class="overlap-section position-relative z-index-1">
-        <div
-          class="fs-335 fw-700 ls-minus-10px text-white md-ls-minus-4px text-end text-shadow-large"
-          style="color: rgb(224, 122, 95); margin-right: 9px"
-        >
-          Tech Stack
-        </div>
-      </div>
-      <div class="container overlap-gap-section position-relative">
-        <div
-          class="position-absolute lg-right-minus-39px d-none d-md-inline-block"
-          style="left: 43px; top: -200px"
-        >
-          <img
-            src="images/download.webp"
-            data-bottom-top="transform: rotate(-10deg) translateY(50px)"
-            data-top-bottom="transform:rotate(10deg) translateY(-50px)"
-            alt=""
-            class="skrollable skrollable-between"
-            data-no-retina=""
-            style="transform: rotate(-8.49511deg) translateY(42.4756px)"
-          />
-        </div>
-        <div
-          class="position-absolute bottom-40px md-bottom-60px left-minus-50px"
-        >
-          <img
-            src="images/demo-ebook-shape-02.webp"
-            data-bottom-top="transform: rotate(10deg) translateX(50px)"
-            data-top-bottom="transform:rotate(-10deg) translateX(-50px)"
-            alt=""
-            class="skrollable skrollable-before"
-            data-no-retina=""
-            style="transform: rotate(10deg) translateX(50px)"
-          />
-        </div>
-        <div class="row mb-3">
-          <div
-            class="row row-cols-1 row-cols-lg-4 row-cols-md-2 justify-content-center mb-5 md-mb-7 appear anime-child anime-complete"
-            data-anime='{ "el": "childs", "rotateZ": [5, 0], "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
-          >
-            <!-- start features box item -->
-            <div
-              class="col icon-with-text-style-10 md-mb-30px skrollable skrollable-before"
-              data-bottom-top="transform: translateY(20px)"
-              data-top-bottom="transform: translateY(-20px)"
-              style="transform: translateY(20px)"
-            >
-              <div
-                class="feature-box bg-white h-100 justify-content-start box-shadow-quadruple-large box-shadow-quadruple-large-hover p-50px xl-p-30px border-radius-8px"
-              >
-                <div
-                  class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle mb-20px"
-                >
-                  <img src="images/project/php.png" alt="" />
-                </div>
-                <div class="feature-box-content last-paragraph-no-margin">
-                  <span
-                    class="d-inline-block fw-500 text-dark-gray mb-5px fs-18"
-                    >PHP</span
-                  >
-                </div>
-              </div>
-            </div>
-            <!-- end features box item -->
-            <!-- start features box item -->
-            <div
-              class="col icon-with-text-style-10 md-mb-30px skrollable skrollable-before"
-              data-bottom-top="transform: translateY(-20px)"
-              data-top-bottom="transform: translateY(20px)"
-              style="transform: translateY(-20px)"
-            >
-              <div
-                class="feature-box bg-white h-100 justify-content-start box-shadow-quadruple-large box-shadow-quadruple-large-hover p-50px xl-p-30px border-radius-8px"
-              >
-                <div
-                  class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle mb-20px"
-                >
-                  <img src="images/project/laravel.png" alt="" />
-                </div>
-                <div class="feature-box-content last-paragraph-no-margin">
-                  <span
-                    class="d-inline-block fw-500 text-dark-gray mb-5px fs-18"
-                    >LARAVEL</span
-                  >
-                </div>
-              </div>
-            </div>
-            <!-- end features box item -->
-            <!-- start features box item -->
-            <div
-              class="col icon-with-text-style-10 sm-mb-30px skrollable skrollable-before"
-              data-bottom-top="transform: translateY(20px)"
-              data-top-bottom="transform: translateY(-20px)"
-              style="transform: translateY(20px)"
-            >
-              <div
-                class="feature-box bg-white h-100 justify-content-start box-shadow-quadruple-large box-shadow-quadruple-large-hover p-50px xl-p-30px border-radius-8px"
-              >
-                <div
-                  class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle mb-20px"
-                >
-                  <img src="images/project/sql.png" alt="" />
-                </div>
-                <div class="feature-box-content last-paragraph-no-margin">
-                  <span
-                    class="d-inline-block fw-500 text-dark-gray mb-5px fs-18"
-                    >SQL</span
-                  >
-                </div>
-              </div>
-            </div>
-            <!-- end features box item -->
-            <!-- start features box item -->
-            <div
-              class="col icon-with-text-style-10 skrollable skrollable-before"
-              data-bottom-top="transform: translateY(-20px)"
-              data-top-bottom="transform: translateY(20px)"
-              style="transform: translateY(-20px)"
-            >
-              <div
-                class="feature-box bg-white h-100 justify-content-start box-shadow-quadruple-large box-shadow-quadruple-large-hover p-50px xl-p-30px border-radius-8px"
-              >
-                <div
-                  class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle mb-20px"
-                >
-                  <img src="images/project/aws.png" alt="" />
-                </div>
-                <div class="feature-box-content last-paragraph-no-margin">
-                  <span
-                    class="d-inline-block fw-500 text-dark-gray mb-5px fs-18"
-                    >AWS</span
-                  >
-                </div>
-              </div>
-            </div>
-            <!-- end features box item -->
-            <!-- start features box item -->
-            <div
-              class="col icon-with-text-style-10 skrollable skrollable-before"
-              data-bottom-top="transform: translateY(-20px)"
-              data-top-bottom="transform: translateY(20px)"
-              style="transform: translateY(-20px)"
-            >
-              <div
-                class="feature-box bg-white h-100 justify-content-start box-shadow-quadruple-large box-shadow-quadruple-large-hover p-50px xl-p-30px border-radius-8px"
-              >
-                <div
-                  class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle mb-20px"
-                >
-                  <img src="images/project/java.webp" alt="" />
-                </div>
-                <div class="feature-box-content last-paragraph-no-margin">
-                  <span
-                    class="d-inline-block fw-500 text-dark-gray mb-5px fs-18"
-                    >JAVA</span
-                  >
-                </div>
-              </div>
-            </div>
-            <!-- end features box item -->
-            <!-- start features box item -->
-            <div
-              class="col icon-with-text-style-10 skrollable skrollable-before"
-              data-bottom-top="transform: translateY(-20px)"
-              data-top-bottom="transform: translateY(20px)"
-              style="transform: translateY(-20px)"
-            >
-              <div
-                class="feature-box bg-white h-100 justify-content-start box-shadow-quadruple-large box-shadow-quadruple-large-hover p-50px xl-p-30px border-radius-8px"
-              >
-                <div
-                  class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle mb-20px"
-                >
-                  <img src="images/project/js.png" alt="" />
-                </div>
-                <div class="feature-box-content last-paragraph-no-margin">
-                  <span
-                    class="d-inline-block fw-500 text-dark-gray mb-5px fs-18"
-                    >JAVASCRIPT</span
-                  >
-                </div>
-              </div>
-            </div>
-            <!-- end features box item -->
-            <!-- start features box item -->
-            <div
-              class="col icon-with-text-style-10 skrollable skrollable-before"
-              data-bottom-top="transform: translateY(-20px)"
-              data-top-bottom="transform: translateY(20px)"
-              style="transform: translateY(-20px)"
-            >
-              <div
-                class="feature-box bg-white h-100 justify-content-start box-shadow-quadruple-large box-shadow-quadruple-large-hover p-50px xl-p-30px border-radius-8px"
-              >
-                <div
-                  class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle mb-20px"
-                >
-                  <img src="images/project/api.png" alt="" />
-                </div>
-                <div class="feature-box-content last-paragraph-no-margin">
-                  <span
-                    class="d-inline-block fw-500 text-dark-gray mb-5px fs-18"
-                    >REST APIs</span
-                  >
-                </div>
-              </div>
-            </div>
-            <!-- end features box item -->
-            <!-- start features box item -->
-            <div
-              class="col icon-with-text-style-10 skrollable skrollable-before"
-              data-bottom-top="transform: translateY(-20px)"
-              data-top-bottom="transform: translateY(20px)"
-              style="transform: translateY(-20px)"
-            >
-              <div
-                class="feature-box bg-white h-100 justify-content-start box-shadow-quadruple-large box-shadow-quadruple-large-hover p-50px xl-p-30px border-radius-8px"
-              >
-                <div
-                  class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle mb-20px"
-                >
-                  <img src="images/project/dev.png" alt="" />
-                </div>
-                <div class="feature-box-content last-paragraph-no-margin">
-                  <span
-                    class="d-inline-block fw-500 text-dark-gray mb-5px fs-18"
-                    >BACKEND/FRONTEND</span
-                  >
-                </div>
-              </div>
-            </div>
-            <!-- end features box item -->
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- START Featured Projects Slider Section -->
-
-    <section
-      class="position-relative flex-column-reverse flex-lg-row"
-      id="work"
-    >
-      <div class="container">
-        <div class="col-12 mt-5px">
-          <div class="separator-line-2px w-100 d-block bg-base-color"></div>
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="section-header reveal">
+            <div class="section-tag">About Me</div>
+            <h2>Building the Future with <span class="gradient-text">Code</span></h2>
+            <p>Passionate about creating robust, scalable, and high-performance systems</p>
         </div>
-        <div class="row justify-content-center align-items-center">
-          <div
-            class="col-lg-5 mb-4"
-            data-aos="fade-right"
-            data-aos-duration="800"
-          >
-            <div class="icon-with-text-style-08 mb-20px">
-              <div class="feature-box feature-box-left-icon-middle">
-                <div
-                  class="position-absolute lg-right-minus-39px d-none d-md-inline-block"
-                  style="left: 43px; top: -130px"
-                >
-                  <img
-                    src="images/demo-freelancer-04.png"
-                    data-bottom-top="transform: rotate(-10deg) translateY(50px)"
-                    data-top-bottom="transform:rotate(10deg) translateY(-50px)"
-                    alt=""
-                    class="skrollable skrollable-between"
-                    data-no-retina=""
-                    style="transform: rotate(-8.49511deg) translateY(42.4756px)"
-                  />
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <p>I am a <strong>Java Full Stack Developer</strong> with a proven track record of delivering high-volume banking communication systems, RESTful APIs, and cloud-hosted platforms on <strong>AWS</strong>.</p>
+                <p>Proficient across the full stack with <strong>Vue.js</strong> front-end expertise, <strong>Redis</strong> caching strategies, <strong>Docker</strong> containerization, and <strong>Linux</strong> server administration. I excel at production support, performance tuning, and system optimization for mission-critical financial applications.</p>
+                <div class="about-features">
+                    <div class="feature-box">
+                        <div class="feature-icon cyan"><i class="fas fa-server"></i></div>
+                        <span>Microservices Architecture</span>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon purple"><i class="fas fa-cloud"></i></div>
+                        <span>AWS Cloud Infrastructure</span>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon pink"><i class="fas fa-database"></i></div>
+                        <span>Database Optimization</span>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon green"><i class="fas fa-gauge-high"></i></div>
+                        <span>Performance Tuning</span>
+                    </div>
                 </div>
-
-                <div class="feature-box-content last-paragraph-no-margin">
-                  <span
-                    class="d-inline-block alt-font fs-19 ls-minus-05px text-white"
-                    >My Projects</span
-                  >
-                </div>
-              </div>
             </div>
-            <h2
-              class="alt-font text-black fw-600 ls-minus-3px w-85 lg-w-100 mb-4"
-            >
-              Crafting scalable, secure web solutions.
-            </h2>
-            <p class="w-80 lg-w-100 text-black opacity-4 mb-5">
-              Projects built using Laravel, Vue.js, AWS, REST APIs, and modern
-              development standards.
-            </p>
-
-            <!-- Tech Stack Badges -->
-            <div
-              class="tech-stack-badges mt-4"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <span class="badge bg-dark text-white me-2 mb-2 px-3 py-2"
-                >Laravel</span
-              >
-              <span class="badge bg-primary text-white me-2 mb-2 px-3 py-2"
-                >Vue.js</span
-              >
-              <span class="badge bg-danger text-white me-2 mb-2 px-3 py-2"
-                >AWS</span
-              >
-              <span class="badge bg-info text-dark me-2 mb-2 px-3 py-2"
-                >REST APIs</span
-              >
-              <span class="badge bg-warning text-dark me-2 mb-2 px-3 py-2"
-                >MySQL</span
-              >
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <span class="code-title">Developer.java</span>
+                </div>
+                <div class="code-body">
+                    <div class="code-line"><span class="line-num">1</span><span class="kw">public class</span> <span class="cls">Developer</span> {</div>
+                    <div class="code-line"><span class="line-num">2</span>&nbsp;&nbsp;<span class="kw">private</span> <span class="cls">String</span> <span class="var">name</span> = <span class="str">"Manjeet Kumar"</span>;</div>
+                    <div class="code-line"><span class="line-num">3</span>&nbsp;&nbsp;<span class="kw">private</span> <span class="cls">String</span> <span class="var">role</span> = <span class="str">"Full Stack Dev"</span>;</div>
+                    <div class="code-line"><span class="line-num">4</span>&nbsp;&nbsp;<span class="kw">private</span> <span class="cls">String</span>[] <span class="var">stack</span> = {</div>
+                    <div class="code-line"><span class="line-num">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Java"</span>, <span class="str">"Spring Boot"</span>, <span class="str">"AWS"</span>,</div>
+                    <div class="code-line"><span class="line-num">6</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Vue.js"</span>, <span class="str">"MySQL"</span>, <span class="str">"Redis"</span></div>
+                    <div class="code-line"><span class="line-num">7</span>&nbsp;&nbsp;};</div>
+                    <div class="code-line"><span class="line-num">8</span>&nbsp;&nbsp;<span class="kw">public</span> <span class="cls">String</span> <span class="fn">getPassion</span>() {</div>
+                    <div class="code-line"><span class="line-num">9</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">"Building scalable systems"</span>;</div>
+                    <div class="code-line"><span class="line-num">10</span>&nbsp;&nbsp;}</div>
+                    <div class="code-line"><span class="line-num">11</span>}</div>
+                    <div class="code-line"><span class="line-num">12</span><span class="cm">// Let's build something amazing together!</span></div>
+                </div>
             </div>
-          </div>
-
-          <!-- Project Slider -->
-          <div
-            class="col-lg-7 testimonials-style-12"
-            data-aos="fade-left"
-            data-aos-duration="800"
-          >
-            <div
-              class="swiper project-swiper"
-              data-slider-options='{ 
-                    "slidesPerView": 1, 
-                    "loop": true, 
-                    "spaceBetween": 30, 
-                    "autoplay": { "delay": 5000, "disableOnInteraction": false }, 
-                    "navigation": { 
-                        "nextEl": ".swiper-button-next-nav", 
-                        "prevEl": ".swiper-button-previous-nav" 
-                    },
-                    "effect": "creative",
-                    "creativeEffect": {
-                        "prev": {
-                            "shadow": true,
-                            "translate": [0, 0, -400]
-                        },
-                        "next": {
-                            "translate": ["100%", 0, 0]
-                        }
-                    }
-                }'
-            >
-              <div class="swiper-wrapper pt-20px pb-20px">
-                <!-- Project Slide: Digital Doctor Clinic -->
-                <div class="swiper-slide">
-                  <div
-                    class="row g-0 border-radius-12px overflow-hidden box-shadow-large hover-scale"
-                  >
-                    <div
-                      class="col-sm-5 services-box-img xs-h-350px position-relative"
-                    >
-                      <div
-                        class="h-100 cover-background project-image"
-                        style="background-image: url('images/project/ddc.jpg')"
-                      ></div>
-                      <div
-                        class="project-overlay d-flex align-items-center justify-content-center"
-                      >
-                        <a
-                          href="#"
-                          class="btn btn-primary btn-round btn-large m-2"
-                          >View Details</a
-                        >
-                        <a
-                          href="#"
-                          class="btn btn-outline-light btn-round btn-large m-2"
-                          >Live Demo</a
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="col-sm-7 testimonials-box bg-white p-9 sm-p-7 box-shadow-extra-large"
-                    >
-                      <div class="d-flex align-items-center mb-3">
-                        <h6 class="fw-600 text-dark-gray mb-0 me-3">
-                          Digital Doctor Clinic – UP Govt
-                        </h6>
-                        <span class="badge bg-success">Completed</span>
-                      </div>
-                      <p class="fs-15 mb-3">
-                        A telemedicine system with doctor/patient dashboards,
-                        real-time video consultation, and medicine inventory.
-                      </p>
-                      <p class="fs-14 mb-3">
-                        <strong>Tech:</strong> Laravel, MySQL, REST APIs, AWS S3
-                      </p>
-                      <div class="project-stats">
-                        <div class="stat-item">
-                          <i class="fas fa-user-alt me-2"></i>
-                          <span>5000+ Users</span>
-                        </div>
-                        <div class="stat-item">
-                          <i class="fas fa-calendar-check me-2"></i>
-                          <span>6 Months</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Project Slide: Baker Real Estate -->
-                <div class="swiper-slide">
-                  <div
-                    class="row g-0 border-radius-12px overflow-hidden box-shadow-large hover-scale"
-                  >
-                    <div
-                      class="col-sm-5 services-box-img xs-h-350px position-relative"
-                    >
-                      <div
-                        class="h-100 cover-background project-image"
-                        style="
-                          background-image: url('images/project/baker.jpg');
-                        "
-                      ></div>
-                      <div
-                        class="project-overlay d-flex align-items-center justify-content-center"
-                      >
-                        <a
-                          href="#"
-                          class="btn btn-primary btn-round btn-large m-2"
-                          >View Details</a
-                        >
-                        <a
-                          href="#"
-                          class="btn btn-outline-light btn-round btn-large m-2"
-                          >Live Demo</a
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="col-sm-7 testimonials-box bg-white p-9 sm-p-7 box-shadow-extra-large"
-                    >
-                      <div class="d-flex align-items-center mb-3">
-                        <h6 class="fw-600 text-dark-gray mb-0 me-3">
-                          Baker Real Estate – Canada
-                        </h6>
-                        <span class="badge bg-success">Completed</span>
-                      </div>
-                      <p class="fs-15 mb-3">
-                        Enterprise-level backend system for property listings,
-                        project launches, and AWS S3 file management.
-                      </p>
-                      <p class="fs-14 mb-3">
-                        <strong>Tech:</strong> Laravel, Vue.js, Redis, AWS
-                        EC2/S3
-                      </p>
-                      <div class="project-stats">
-                        <div class="stat-item">
-                          <i class="fas fa-building me-2"></i>
-                          <span>200+ Properties</span>
-                        </div>
-                        <div class="stat-item">
-                          <i class="fas fa-database me-2"></i>
-                          <span>10TB Storage</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Project Slide: Samruddhi -->
-                <div class="swiper-slide">
-                  <div
-                    class="row g-0 border-radius-12px overflow-hidden box-shadow-large hover-scale"
-                  >
-                    <div
-                      class="col-sm-5 services-box-img xs-h-350px position-relative"
-                    >
-                      <div
-                        class="h-100 cover-background project-image"
-                        style="
-                          background-image: url('images/project/samrudhi.jpg');
-                        "
-                      ></div>
-                      <div
-                        class="project-overlay d-flex align-items-center justify-content-center"
-                      >
-                        <a
-                          href="#"
-                          class="btn btn-primary btn-round btn-large m-2"
-                          >View Details</a
-                        >
-                        <a
-                          href="#"
-                          class="btn btn-outline-light btn-round btn-large m-2"
-                          >Live Demo</a
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="col-sm-7 testimonials-box bg-white p-9 sm-p-7 box-shadow-extra-large"
-                    >
-                      <div class="d-flex align-items-center mb-3">
-                        <h6 class="fw-600 text-dark-gray mb-0 me-3">
-                          Samruddhi – Asset Management
-                        </h6>
-                        <span class="badge bg-success">Completed</span>
-                      </div>
-                      <p class="fs-15 mb-3">
-                        Internal system for tracking, managing, and reporting
-                        physical and digital assets.
-                      </p>
-                      <p class="fs-14 mb-3">
-                        <strong>Tech:</strong> Laravel, Bootstrap, MySQL
-                      </p>
-                      <div class="project-stats">
-                        <div class="stat-item">
-                          <i class="fas fa-box-seam me-2"></i>
-                          <span>5000+ Assets</span>
-                        </div>
-                        <div class="stat-item">
-                          <i class="fas fa-graph-up me-2"></i>
-                          <span>30% Efficiency Gain</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div
-                    class="row g-0 border-radius-12px overflow-hidden box-shadow-large hover-scale"
-                  >
-                    <div
-                      class="col-sm-5 services-box-img xs-h-350px position-relative"
-                    >
-                      <div
-                        class="h-100 cover-background project-image"
-                        style="
-                          background-image: url('images/project/sanidhya.jpg');
-                        "
-                      ></div>
-                      <div
-                        class="project-overlay d-flex align-items-center justify-content-center"
-                      >
-                        <a
-                          href="#"
-                          class="btn btn-primary btn-round btn-large m-2"
-                          >View Details</a
-                        >
-                        <a
-                          href="#"
-                          class="btn btn-outline-light btn-round btn-large m-2"
-                          >Live Demo</a
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="col-sm-7 testimonials-box bg-white p-9 sm-p-7 box-shadow-extra-large"
-                    >
-                      <div class="d-flex align-items-center mb-3">
-                        <h6 class="fw-600 text-dark-gray mb-0 me-3">
-                          Sanidhya – Payment & Ticket System
-                        </h6>
-                        <span class="badge bg-success">Completed</span>
-                      </div>
-                      <p class="fs-15 mb-3">
-                        Automated platform for secure payments and ticket
-                        generation with QR integration for events.
-                      </p>
-                      <p class="fs-14 mb-3">
-                        <strong>Tech:</strong> Laravel, PHP, MySQL, Bootstrap
-                      </p>
-                      <div class="project-stats">
-                        <div class="stat-item">
-                          <i class="fas fa-receipt-cutoff me-2"></i>
-                          <span>10K+ Tickets Generated</span>
-                        </div>
-                        <div class="stat-item">
-                          <i class="fas fa-cash-coin me-2"></i>
-                          <span>100% Secure Transactions</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div
-                    class="row g-0 border-radius-12px overflow-hidden box-shadow-large hover-scale"
-                  >
-                    <div
-                      class="col-sm-5 services-box-img xs-h-350px position-relative"
-                    >
-                      <div
-                        class="h-100 cover-background project-image"
-                        style="
-                          background-image: url('images/project/pragti.jpg');
-                        "
-                      ></div>
-                      <div
-                        class="project-overlay d-flex align-items-center justify-content-center"
-                      >
-                        <a
-                          href="#"
-                          class="btn btn-primary btn-round btn-large m-2"
-                          >View Details</a
-                        >
-                        <a
-                          href="#"
-                          class="btn btn-outline-light btn-round btn-large m-2"
-                          >Live Demo</a
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="col-sm-7 testimonials-box bg-white p-9 sm-p-7 box-shadow-extra-large"
-                    >
-                      <div class="d-flex align-items-center mb-3">
-                        <h6 class="fw-600 text-dark-gray mb-0 me-3">
-                          Pragti – Office Employee Management
-                        </h6>
-                        <span class="badge bg-info">In Use</span>
-                      </div>
-                      <p class="fs-15 mb-3">
-                        A web-based system for managing employee profiles,
-                        departments, and attendance tracking.
-                      </p>
-                      <p class="fs-14 mb-3">
-                        <strong>Tech:</strong> Laravel, MySQL, HTML, CSS,
-                        Bootstrap
-                      </p>
-                      <div class="project-stats">
-                        <div class="stat-item">
-                          <i class="fas fa-people me-2"></i>
-                          <span>150+ Active Employees</span>
-                        </div>
-                        <div class="stat-item">
-                          <i class="fas fa-calendar-check me-2"></i>
-                          <span>Realtime Attendance Logs</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slider Navigation -->
-              <div
-                class="swiper-button-next-nav border-radius-100px swiper-button-next box-shadow-small hover-grow"
-                style="background-color: #9c2531"
-              >
-                <i class="fa fa-angle-double-left"></i>
-              </div>
-              <div
-                class="swiper-button-previous-nav border-radius-100px swiper-button-prev box-shadow-small hover-grow"
-                style="background-color: #9c2531"
-              >
-                <i class="fa fa-angle-double-right"></i>
-              </div>
-
-              <!-- Pagination -->
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- end section -->
-    <!-- start section -->
-    <section
-      class="overflow-hidden position-relative half-section overlap-height pb-0"
-      style="
-        background-image: url('/images/white_bg_intro.jpg');
-        background-position: 50% -0.439583px;
-      "
-    >
-      <div
-        class="position-absolute lg-right-minus-39px d-none d-md-inline-block"
-        style="left: 43px; top: -130px"
-      >
-        <img
-          src="images/demo-freelancer-04.png"
-          data-bottom-top="transform: rotate(-10deg) translateY(50px)"
-          data-top-bottom="transform:rotate(10deg) translateY(-50px)"
-          alt=""
-          class="skrollable skrollable-between"
-          data-no-retina=""
-          style="transform: rotate(-8.49511deg) translateY(42.4756px)"
-        />
-      </div>
-
-      <div class="container-fluid overlap-gap-section">
-        <div class="row position-relative">
-          <div
-            class="col swiper swiper-width-auto text-center pb-30px sm-pb-0px"
-            data-slider-options='{ "slidesPerView": "auto", "spaceBetween":60, "speed": 8000, "loop": true, "autoplay": { "delay":0, "disableOnInteraction": false }, "allowTouchMove": false, "effect": "slide" }'
-          >
-            <div class="swiper-wrapper marquee-slide">
-              <!-- start skill item -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal"
-                >
-                  Laravel.
-                </div>
-              </div>
-              <!-- end skill item -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal"
-                >
-                  PHP.
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div
-                  class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal"
-                >
-                  MySQL.
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div
-                  class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal"
-                >
-                  JavaScript.
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div
-                  class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal"
-                >
-                  Vue.js.
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div
-                  class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal"
-                >
-                  AWS.
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div
-                  class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal"
-                >
-                  REST APIs.
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div
-                  class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal"
-                >
-                  Docker.
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div
-                  class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal"
-                >
-                  Redis.
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div
-                  class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal"
-                >
-                  SQL.
-                </div>
-              </div>
-              <!-- repeat for loop effect -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal"
-                >
-                  Laravel.
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="section-header reveal">
+            <div class="section-tag">Expertise</div>
+            <h2>Technical <span class="gradient-text">Skills</span></h2>
+            <p>Technologies and tools I use to build world-class applications</p>
         </div>
-      </div>
-    </section>
-
-    <!-- end section -->
-    <!-- start section -->
-    <section
-      class="bg-base-color bg-sliding-line position-relative pb-0"
-      style="background-color: #130e0f"
-    >
-      <div class="container-fluid overlap-section">
-        <div class="row position-relative">
-          <div
-            class="col swiper swiper-width-auto text-center pb-30px sm-pb-0px"
-            data-slider-options='{ "slidesPerView": "auto", "spaceBetween":50, "speed": 8000, "loop": true, "autoplay": { "delay":0, "disableOnInteraction": false, "reverseDirection": true }, "allowTouchMove": false, "effect": "slide" }'
-          >
-            <div class="swiper-wrapper marquee-slide">
-              <!-- start skill item -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal"
-                >
-                  Laravel.
-                </div>
-              </div>
-              <!-- end skill item -->
-              <!-- start skill item -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal"
-                >
-                  PHP.
-                </div>
-              </div>
-              <!-- end skill item -->
-              <!-- start skill item -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal"
-                >
-                  JavaScript.
-                </div>
-              </div>
-              <!-- end skill item -->
-              <!-- start skill item -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal"
-                >
-                  Vue.js.
-                </div>
-              </div>
-              <!-- end skill item -->
-              <!-- start skill item -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal"
-                >
-                  AWS.
-                </div>
-              </div>
-              <!-- end skill item -->
-              <!-- start skill item -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal"
-                >
-                  MySQL.
-                </div>
-              </div>
-              <!-- end skill item -->
-              <!-- start skill item -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal"
-                >
-                  REST APIs.
-                </div>
-              </div>
-              <!-- end skill item -->
-              <!-- start skill item -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal"
-                >
-                  Docker.
-                </div>
-              </div>
-              <!-- end skill item -->
-              <!-- start skill item -->
-              <div class="swiper-slide">
-                <div
-                  class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal"
-                >
-                  Redis.
-                </div>
-              </div>
-              <!-- end skill item -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="expertise" class="container overflow-y-hidden">
-        <div class="row align-items-end flex-column-reverse flex-lg-row">
-          <div class="col-lg-7 position-relative overflow-hidden">
-            <div class="outside-box-bottom-2 outside-box-left-5">
-              <div class="atropos" data-atropos>
-                <div class="atropos-scale">
-                  <div class="atropos-rotate">
-                    <div class="atropos-inner text-center overflow-visible">
-                      <div
-                        data-atropos-offset="-1"
-                        class="position-absolute left-0px right-0px"
-                      >
-                        <img
-                          src="images/demo-freelancer-01.png"
-                          class="w-70"
-                          alt=""
-                        />
-                      </div>
-                      <img
-                        data-atropos-offset="5"
-                        class="position-relative"
-                        src="images/man.png"
-                        alt=""
-                      />
+        <div class="skills-wrapper reveal">
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon java"><i class="fab fa-java"></i></div>
+                    <div>
+                        <h3>Core & Backend</h3>
+                        <p>Server-side development</p>
                     </div>
-                  </div>
                 </div>
-              </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">Spring MVC</span>
+                    <span class="skill-tag">Spring Scheduler</span>
+                    <span class="skill-tag">Hibernate</span>
+                    <span class="skill-tag">JPA</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">Python</span>
+                </div>
             </div>
-          </div>
-          <div
-            class="col-lg-5 mb-6 mt-6 md-mb-0"
-            data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
-          >
-            <h4 class="fw-600 text-white mb-20px ls-minus-1px">
-              Building reliable and scalable backend systems with modern web
-              technologies.
-            </h4>
-            <p class="w-90 text-white xl-w-100 mb-4">
-              As a dedicated developer, I specialize in creating efficient,
-              secure, and maintainable applications focused on delivering
-              exceptional user experiences and robust performance.
-            </p>
-            <div class="progress-bar-style-01 mt-14 d-block">
-              <!-- start progress bar item -->
-              <div class="progress mb-12 sm-mb-20 bg-transparent">
-                <div
-                  class="progress-bar-title d-inline-block text-white text-uppercase fs-14 fw-600"
-                >
-                  Laravel & PHP
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon api"><i class="fas fa-network-wired"></i></div>
+                    <div>
+                        <h3>APIs & Architecture</h3>
+                        <p>System design & integration</p>
+                    </div>
                 </div>
-                <div
-                  class="progress-bar bg-white"
-                  role="progressbar"
-                  aria-valuenow="90"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  aria-label="laravel-php"
-                >
-                  <span
-                    class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white"
-                    >90%</span
-                  >
+                <div class="skill-tags">
+                    <span class="skill-tag">RESTful APIs</span>
+                    <span class="skill-tag">Microservices</span>
+                    <span class="skill-tag">JSON</span>
+                    <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">API Testing</span>
+                    <span class="skill-tag">MVC Architecture</span>
                 </div>
-              </div>
-              <!-- end progress bar item -->
-              <!-- start progress bar item -->
-              <div class="progress mb-12 sm-mb-20 bg-transparent">
-                <div
-                  class="progress-bar-title d-inline-block text-white text-uppercase fs-14 fw-600"
-                >
-                  JavaScript & Vue.js
-                </div>
-                <div
-                  class="progress-bar bg-white"
-                  role="progressbar"
-                  aria-valuenow="85"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  aria-label="vue-js"
-                >
-                  <span
-                    class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white"
-                    >85%</span
-                  >
-                </div>
-              </div>
-              <!-- end progress bar item -->
-              <!-- start progress bar item -->
-              <div class="progress mb-12 sm-mb-20 bg-transparent">
-                <div
-                  class="progress-bar-title d-inline-block text-white text-uppercase fs-14 fw-600"
-                >
-                  AWS & DevOps
-                </div>
-                <div
-                  class="progress-bar bg-white"
-                  role="progressbar"
-                  aria-valuenow="75"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  aria-label="aws-devops"
-                >
-                  <span
-                    class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white"
-                    >75%</span
-                  >
-                </div>
-              </div>
-              <!-- end progress bar item -->
             </div>
-          </div>
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon db"><i class="fas fa-database"></i></div>
+                    <div>
+                        <h3>Databases & Caching</h3>
+                        <p>Data storage & retrieval</p>
+                    </div>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Queue Processing</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon cloud"><i class="fas fa-cloud"></i></div>
+                    <div>
+                        <h3>Cloud & DevOps</h3>
+                        <p>Infrastructure & deployment</p>
+                    </div>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">AWS EC2</span>
+                    <span class="skill-tag">AWS S3</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Ubuntu</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon front"><i class="fas fa-laptop-code"></i></div>
+                    <div>
+                        <h3>Frontend</h3>
+                        <p>User interface development</p>
+                    </div>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Vue.js</span>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Bootstrap</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon tool"><i class="fas fa-chart-line"></i></div>
+                    <div>
+                        <h3>Monitoring & Tools</h3>
+                        <p>Observability & automation</p>
+                    </div>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">New Relic</span>
+                    <span class="skill-tag">Sentry</span>
+                    <span class="skill-tag">Laravel Telescope</span>
+                    <span class="skill-tag">Cron Jobs</span>
+                    <span class="skill-tag">Bulk SMS/Email</span>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- end section -->
-    <!-- start section -->
-    <section id="awards" class="pb-0">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div
-              class="row align-items-center mb-6"
-              data-anime='{ "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
-            >
-              <div class="col-10">
-                <span
-                  class="text-base-color fw-700 text-uppercase fs-14 ls-05px"
-                  >Achievements & Certifications</span
-                >
-              </div>
-              <div class="col-2 text-end">
-                <span class="text-base-color fs-14 fw-700">03</span>
-              </div>
-              <div class="col-12 mt-5px">
-                <div
-                  class="separator-line-2px w-100 d-block bg-base-color"
-                ></div>
-              </div>
-            </div>
-            <div class="row">
-              <div
-                class="col-xl-4 col-lg-5 last-paragraph-no-margin md-mb-30px"
-                data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
-              >
-                <h4 class="fw-700 ls-minus-1px mb-20px">
-                  Recognized for backend and API excellence.
-                </h4>
-                <p class="w-85 lg-w-100">
-                  Awarded for key contributions to Laravel-based enterprise
-                  systems, and certified in AWS and Java Full Stack development.
-                </p>
-              </div>
-              <div
-                class="col-xl-8 col-lg-7"
-                data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
-              >
-                <div class="row g-0">
-                  <div class="col-2 text-center align-self-center">
-                    <span class="text-dark-gray fs-14 fw-600">2024</span>
-                  </div>
-                  <div
-                    class="col-8 last-paragraph-no-margin ps-30px pe-30px pt-15px pb-15px border-start border-color-light-medium-gray"
-                  >
-                    <p>
-                      Worked on production-level deployment & support at
-                      <span class="fw-600 text-dark-gray"
-                        >Bhavitha TechSolutions</span
-                      >
-                      for a Canadian real estate firm
-                    </p>
-                  </div>
-                  <div class="col-2 align-self-center text-center">
-                    <span class="text-dark-gray fs-14 fw-600">LIVE</span>
-                  </div>
-                </div>
-                <div class="row border-top border-color-light-medium-gray g-0">
-                  <div class="col-2 text-center align-self-center">
-                    <span class="text-dark-gray fs-14 fw-600">2023</span>
-                  </div>
-                  <div
-                    class="col-8 last-paragraph-no-margin ps-30px pe-30px pt-15px pb-15px border-start border-color-light-medium-gray"
-                  >
-                    <p>
-                      Completed
-                      <span class="fw-600 text-dark-gray"
-                        >AWS Technical Essentials</span
-                      >
-                      certification
-                    </p>
-                  </div>
-                  <div class="col-2 align-self-center text-center">
-                    <span class="text-dark-gray fs-14 fw-600">CERT</span>
-                  </div>
-                </div>
-                <div class="row border-top border-color-light-medium-gray g-0">
-                  <div class="col-2 text-center align-self-center">
-                    <span class="text-dark-gray fs-14 fw-600">2022</span>
-                  </div>
-                  <div
-                    class="col-8 last-paragraph-no-margin ps-30px pe-30px pt-15px pb-15px border-start border-color-light-medium-gray"
-                  >
-                    <p>
-                      Java Full Stack Development course completed at
-                      <span class="fw-600 text-dark-gray"
-                        >JSpiders, Bangalore</span
-                      >
-                    </p>
-                  </div>
-                  <div class="col-2 align-self-center text-center">
-                    <span class="text-dark-gray fs-14 fw-600">CERT</span>
-                  </div>
-                </div>
-                <div class="row border-top g-0">
-                  <div class="col-2 text-center align-self-center">
-                    <span class="text-dark-gray fs-14 fw-600">2021</span>
-                  </div>
-                  <div
-                    class="col-8 last-paragraph-no-margin ps-30px pe-30px pt-15px pb-15px border-start border-color-light-medium-gray"
-                  >
-                    <p>
-                      Delivered major features for
-                      <span class="fw-600 text-dark-gray"
-                        >Samruddhi & Sanidhya Systems (Art of Living)</span
-                      >
-                    </p>
-                  </div>
-                  <div class="col-2 align-self-center text-center">
-                    <span class="text-dark-gray fs-14 fw-600">PROJECT</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <div class="section-header reveal">
+            <div class="section-tag">Career</div>
+            <h2>Professional <span class="gradient-text">Experience</span></h2>
+            <p>My journey through the tech industry</p>
         </div>
-      </div>
+        <div class="exp-wrapper reveal">
+            <div class="exp-card">
+                <div class="exp-timeline">
+                    <div class="exp-date">2025 — Present</div>
+                    <div class="exp-dot"></div>
+                    <div class="exp-line"></div>
+                </div>
+                <div class="exp-content">
+                    <h3>Software Developer</h3>
+                    <div class="exp-company">
+                        <i class="fas fa-building"></i>
+                        VeUp Technologies Pvt. Ltd. — Ujjivan Small Finance Bank
+                    </div>
+                    <ul class="exp-list">
+                        <li>Architected Java Spring Boot microservices for banking notification & communication systems handling high-volume financial transaction alerts</li>
+                        <li>Designed RESTful APIs using Java Spring Boot and PHP Laravel for seamless integration across banking modules and third-party services</li>
+                        <li>Built large-scale SMS/email automation engine with Spring Scheduler (cron jobs), processing thousands of messages daily</li>
+                        <li>Integrated Redis caching layer for dashboard APIs, significantly reducing response latency under peak load</li>
+                        <li>Deployed and managed infrastructure on AWS EC2 and S3 for high-availability production banking systems</li>
+                        <li>Wrote Python scripts for automation tasks and data processing workflows</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-timeline">
+                    <div class="exp-date">2024 — 2025</div>
+                    <div class="exp-dot"></div>
+                    <div class="exp-line"></div>
+                </div>
+                <div class="exp-content">
+                    <h3>Software Developer</h3>
+                    <div class="exp-company">
+                        <i class="fas fa-building"></i>
+                        Bhavitha TechSolutions Pvt. Ltd. — Baker Real Estate (Canada)
+                    </div>
+                    <ul class="exp-list">
+                        <li>Built Java Spring Boot RESTful APIs powering backend of a large-scale real estate platform serving Canadian clients</li>
+                        <li>Implemented Hibernate ORM with JPA for efficient MySQL database interaction and optimized query execution</li>
+                        <li>Developed features using PHP Laravel MVC alongside Java microservices in a hybrid backend environment</li>
+                        <li>Leveraged Redis caching and AWS EC2/S3 for scalable cloud hosting and file storage</li>
+                        <li>Implemented bug tracking pipelines using New Relic, Sentry, and Laravel Telescope</li>
+                        <li>Managed Linux/Ubuntu servers and Docker-based deployments for consistent staging and production</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-timeline">
+                    <div class="exp-date">2023 — 2024</div>
+                    <div class="exp-dot"></div>
+                </div>
+                <div class="exp-content">
+                    <h3>Software Developer</h3>
+                    <div class="exp-company">
+                        <i class="fas fa-building"></i>
+                        Kods Technologies Pvt. Ltd. — Art of Living Projects
+                    </div>
+                    <ul class="exp-list">
+                        <li><strong>Pragti (Employee Management):</strong> Designed web-based office employee management system using HTML, CSS, Laravel, MySQL, and Bootstrap with secure authentication and dynamic reporting</li>
+                        <li><strong>Samruddhi (Asset Management):</strong> Developed asset tracking modules with robust database design for organizational asset monitoring</li>
+                        <li><strong>Sanidhya (Payment & Ticketing):</strong> Built secure payment processing and automated ticket generation platform using PHP Laravel, significantly reducing manual processing effort</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- end section -->
-    <!-- start footer -->
-    <footer id="contact" class="position-relative overflow-hidden pb-0">
-      <img
-        src="images/demo-freelancer-03.png"
-        class="position-absolute top-0px right-minus-100px"
-        alt=""
-      />
-      <div class="container position-relative">
-        <img
-          src="images/demo-freelancer-04.png"
-          class="position-absolute top-20px right-minus-100px d-none d-md-block"
-          alt=""
-        />
-        <div class="row">
-          <div class="col-md-12 position-relative">
-            <div
-              class="fs-70 md-fs-50 sm-fs-40 ls-minus-3px fw-700 text-black mb-10px sm-ls-minus-1px"
-            >
-              Create something great.
-            </div>
-            <div class="d-inline-block">
-              <i
-                class="fa fa-envelope icon-extra-large md-icon-large me-10px text-base-color align-middle"
-              ></i>
-              <a
-                href=""
-                class="fs-50 sm-fs-40 text-base-color fw-600 align-middle ls-minus-3px sm-ls-minus-1px"
-                ><span class="__cf_email__" data-cfemail=""
-                  >manjeetkumar050896@gmail.com</span
-                ></a
-              >
-            </div>
-          </div>
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-header reveal">
+            <div class="section-tag">Portfolio</div>
+            <h2>Featured <span class="gradient-text">Projects</span></h2>
+            <p>Highlighted work I've delivered across different domains</p>
         </div>
-        <div
-          class="row g-0 align-items-center border-top border-2 border-color-dark-gray pt-30px mt-6 mb-3"
-        >
-          <div class="col-md-7 last-paragraph-no-margin sm-mb-20px">
-            <p>
-              Development is at the heart of my career. I focus on creating
-              efficient, scalable, and secure solutions with clean code and
-              modern architecture.
-            </p>
-          </div>
-          <div
-            class="col-md-5 elements-social social-text-style-01 text-start text-md-end sm-mb-20px"
-          >
-            <ul class="medium-icon dark fw-600">
-              <li>
-                <a
-                  class="linkedin"
-                  href="https://www.linkedin.com/in/manjeet-kumar-976b28241/"
-                  target="_blank"
-                  >In.</a
-                >
-              </li>
-              <li>
-                <a
-                  class="github"
-                  href="https://github.com/ManjeetKumar970"
-                  target="_blank"
-                  >Gh.</a
-                >
-              </li>
-              <li>
-                <a
-                  class="instagram"
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  >Ig.</a
-                >
-              </li>
-            </ul>
-          </div>
+        <div class="projects-grid reveal">
+            <div class="project-card">
+                <div class="project-visual bg-bank">
+                    <div class="floating-icons">
+                        <i class="fas fa-bell fi fi-1" style="color: var(--primary)"></i>
+                        <i class="fas fa-envelope fi fi-2" style="color: var(--secondary)"></i>
+                        <i class="fas fa-mobile-screen fi fi-3" style="color: var(--accent)"></i>
+                    </div>
+                    <i class="fas fa-building-columns project-icon-main" style="color: var(--primary)"></i>
+                </div>
+                <div class="project-body">
+                    <h3>Banking Notification System</h3>
+                    <p>Developed backend microservices and REST APIs for automated banking alert and notification delivery (SMS/email) for Ujjivan Small Finance Bank. Implemented Spring Scheduler for cron-based automation and Redis for high-throughput queue processing ensuring reliable message delivery.</p>
+                    <div class="project-tech-row">
+                        <span class="pt-tag">Java</span>
+                        <span class="pt-tag">Spring Boot</span>
+                        <span class="pt-tag">MySQL</span>
+                        <span class="pt-tag">Redis</span>
+                        <span class="pt-tag">AWS</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="project-badge"><i class="fas fa-circle"></i> Enterprise Scale</span>
+                    <span class="project-badge"><i class="fas fa-circle"></i> Production Live</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-visual bg-realestate">
+                    <div class="floating-icons">
+                        <i class="fas fa-house fi fi-1" style="color: var(--accent)"></i>
+                        <i class="fas fa-map-location-dot fi fi-2" style="color: var(--primary)"></i>
+                        <i class="fas fa-cloud fi fi-3" style="color: var(--secondary)"></i>
+                    </div>
+                    <i class="fas fa-city project-icon-main" style="color: var(--accent)"></i>
+                </div>
+                <div class="project-body">
+                    <h3>Baker Real Estate Platform</h3>
+                    <p>Built RESTful APIs and backend services for a Canada-based real estate platform. Implemented Hibernate ORM for data access layer, Redis caching for performance optimization, and AWS infrastructure for cloud hosting and document storage.</p>
+                    <div class="project-tech-row">
+                        <span class="pt-tag">Java</span>
+                        <span class="pt-tag">Spring Boot</span>
+                        <span class="pt-tag">PHP Laravel</span>
+                        <span class="pt-tag">MySQL</span>
+                        <span class="pt-tag">Redis</span>
+                        <span class="pt-tag">AWS</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="project-badge"><i class="fas fa-circle"></i> Canada Market</span>
+                    <span class="project-badge"><i class="fas fa-circle"></i> Cloud Native</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-visual bg-asset">
+                    <div class="floating-icons">
+                        <i class="fas fa-box fi fi-1" style="color: var(--success)"></i>
+                        <i class="fas fa-barcode fi fi-2" style="color: var(--primary)"></i>
+                        <i class="fas fa-clipboard-check fi fi-3" style="color: var(--secondary)"></i>
+                    </div>
+                    <i class="fas fa-boxes-stacked project-icon-main" style="color: var(--success)"></i>
+                </div>
+                <div class="project-body">
+                    <h3>Asset Management System</h3>
+                    <p>Developed web modules for organizational asset tracking and management for Art of Living, enabling real-time monitoring and customized reporting with secure authentication and role-based access control.</p>
+                    <div class="project-tech-row">
+                        <span class="pt-tag">PHP Laravel</span>
+                        <span class="pt-tag">MySQL</span>
+                        <span class="pt-tag">Bootstrap</span>
+                        <span class="pt-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="project-badge"><i class="fas fa-circle"></i> Asset Tracking</span>
+                    <span class="project-badge"><i class="fas fa-circle"></i> Real-time</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-visual bg-payment">
+                    <div class="floating-icons">
+                        <i class="fas fa-credit-card fi fi-1" style="color: var(--warning)"></i>
+                        <i class="fas fa-ticket fi fi-2" style="color: var(--accent)"></i>
+                        <i class="fas fa-shield-halved fi fi-3" style="color: var(--success)"></i>
+                    </div>
+                    <i class="fas fa-money-bill-wave project-icon-main" style="color: var(--warning)"></i>
+                </div>
+                <div class="project-body">
+                    <h3>Payment & Ticket Generation</h3>
+                    <p>Implemented secure payment gateway integration and automated ticket issuance workflow, streamlining user transactions and significantly reducing manual processing effort for Art of Living events.</p>
+                    <div class="project-tech-row">
+                        <span class="pt-tag">PHP Laravel</span>
+                        <span class="pt-tag">JavaScript</span>
+                        <span class="pt-tag">MySQL</span>
+                        <span class="pt-tag">Bootstrap</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="project-badge"><i class="fas fa-circle"></i> Secure Payments</span>
+                    <span class="project-badge"><i class="fas fa-circle"></i> Automated</span>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <div class="section-header reveal">
+            <div class="section-tag">Background</div>
+            <h2>Education & <span class="gradient-text">Certifications</span></h2>
+            <p>Academic foundation and professional credentials</p>
+        </div>
+        <div class="edu-grid reveal">
+            <div class="edu-card">
+                <div class="edu-card-header">
+                    <div class="edu-card-icon grad"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Education <span>Academic Degrees</span></h3>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-item-info">
+                        <h4>Master of Computer Applications (MCA)</h4>
+                        <p>Anugrah Narayan College, Patna</p>
+                    </div>
+                    <span class="edu-year">2018 — 2022</span>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-item-info">
+                        <h4>Bachelor of Computer Applications (BCA)</h4>
+                        <p>Anugrah Narayan College, Patna</p>
+                    </div>
+                    <span class="edu-year">2015 — 2018</span>
+                </div>
+            </div>
+            <div class="edu-card">
+                <div class="edu-card-header">
+                    <div class="edu-card-icon cert"><i class="fas fa-certificate"></i></div>
+                    <h3>Certifications <span>Professional Credentials</span></h3>
+                </div>
+                <div class="cert-row">
+                    <i class="fas fa-medal"></i>
+                    <span>AWS Technical Essentials — Amazon Web Services</span>
+                </div>
+                <div class="cert-row">
+                    <i class="fas fa-medal"></i>
+                    <span>Java Full Stack Development — JSpiders, Bangalore</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="contact-wrapper reveal">
+            <h2>Let's Build Something <span class="gradient-text">Amazing</span></h2>
+            <p>I'm currently open to new opportunities in Java Full Stack Development, Microservices Architecture, and Cloud Engineering roles.</p>
+            <div class="contact-grid">
+                <a href="tel:+9197097870" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 97097 87870</span>
+                </a>
+                <a href="mailto:manjeet.kumar.dev@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Me</span>
+                </a>
+                <a href="#" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="#" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Made with <span class="heart">❤</span> by Manjeet Kumar | Java Full Stack Developer</p>
     </footer>
-    <!-- end footer -->
-    <!-- start scroll progress -->
-    <div class="scroll-progress d-none d-xxl-block">
-      <a href="index.html#" class="scroll-top" aria-label="scroll">
-        <span class="scroll-text">Scroll</span
-        ><span class="scroll-line"><span class="scroll-point"></span></span>
-      </a>
-    </div>
-    <!-- end scroll progress -->
-    <!-- javascript libraries -->
-    <script
-      data-cfasync="false"
-      src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-    ></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/vendors.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-DND93RJKBT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-DND93RJKBT");
+    <script>
+        // ===== PARTICLE CANVAS =====
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 60;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(0, 212, 255, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        initParticles();
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(0, 212, 255, ${0.1 * (1 - dist / 150)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // ===== TYPEWRITER EFFECT =====
+        const phrases = [
+            "Java Full Stack Developer",
+            "Spring Boot Expert",
+            "Microservices Architect",
+            "AWS Cloud Engineer",
+            "Problem Solver"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterEl = document.getElementById('typewriter');
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                typewriterEl.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterEl.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+            setTimeout(typeWriter, typeSpeed);
+        }
+        typeWriter();
+
+        // ===== SCROLL REVEAL =====
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // ===== MOBILE MENU =====
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.background = 'rgba(5, 5, 8, 0.95)';
+                navLinks.style.padding = '1.5rem';
+                navLinks.style.gap = '1.5rem';
+                navLinks.style.backdropFilter = 'blur(20px)';
+                navLinks.style.borderBottom = '1px solid var(--card-border)';
+            }
+        }
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu if open
+                    const navLinks = document.querySelector('.nav-links');
+                    if (window.innerWidth <= 768) navLinks.style.display = 'none';
+                }
+            });
+        });
+
+        // ===== NAV BLUR ON SCROLL =====
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                nav.style.background = 'rgba(5, 5, 8, 0.95)';
+            } else {
+                nav.style.background = 'rgba(5, 5, 8, 0.8)';
+            }
+            lastScroll = currentScroll;
+        });
     </script>
-  </body>
+</body>
 </html>
