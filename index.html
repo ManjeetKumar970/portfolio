@@ -3,1010 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manjeet Kumar | Java Full Stack Developer Portfolio</title>
+    <title>Manjeet Kumar | Full-Stack Developer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #00d4ff;
-            --primary-glow: rgba(0, 212, 255, 0.4);
-            --secondary: #a855f7;
-            --secondary-glow: rgba(168, 85, 247, 0.4);
-            --accent: #f472b6;
-            --dark: #0a0a0f;
-            --darker: #050508;
-            --card: rgba(20, 20, 35, 0.7);
-            --card-border: rgba(255, 255, 255, 0.06);
-            --text: #e2e8f0;
-            --text-muted: #94a3b8;
-            --success: #22c55e;
-            --warning: #f59e0b;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: var(--darker);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* ===== ANIMATED BACKGROUND ===== */
-        .bg-canvas {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -2;
-            background: var(--darker);
-        }
-
-        .bg-grid {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
-            background-image:
-                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
-            -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
-        }
-
-        .orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(80px);
-            z-index: -1;
-            opacity: 0.5;
-            animation: orbFloat 20s ease-in-out infinite;
-        }
-        .orb-1 { width: 400px; height: 400px; background: var(--primary-glow); top: 10%; left: 10%; animation-delay: 0s; }
-        .orb-2 { width: 300px; height: 300px; background: var(--secondary-glow); top: 60%; right: 10%; animation-delay: -7s; }
-        .orb-3 { width: 250px; height: 250px; background: rgba(244, 114, 182, 0.3); bottom: 10%; left: 40%; animation-delay: -14s; }
-
-        @keyframes orbFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 30px) scale(0.9); }
-        }
-
-        /* ===== NAVIGATION ===== */
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            padding: 1rem 5%;
-            background: rgba(5, 5, 8, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--card-border);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .logo::before {
-            content: '<';
-            color: var(--primary);
-            -webkit-text-fill-color: var(--primary);
-        }
-        .logo::after {
-            content: '/>';
-            color: var(--secondary);
-            -webkit-text-fill-color: var(--secondary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            position: relative;
-            transition: color 0.3s;
-            padding: 0.3rem 0;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transition: width 0.3s;
-            border-radius: 2px;
-        }
-        .nav-links a:hover { color: var(--primary); }
-        .nav-links a:hover::after { width: 100%; }
-
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 7rem 5% 4rem;
-            position: relative;
-        }
-
-        .hero-inner {
-            max-width: 1100px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-left {
-            animation: fadeInLeft 1s ease;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.5rem 1.2rem;
-            background: rgba(0, 212, 255, 0.08);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: 50px;
-            color: var(--primary);
-            font-size: 0.85rem;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-        .hero-badge .pulse {
-            width: 8px; height: 8px;
-            background: var(--success);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.3); }
-        }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 0.8rem;
-        }
-        .hero h1 .gradient-text {
-            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            color: var(--text-muted);
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            min-height: 2rem;
-        }
-        .cursor {
-            display: inline-block;
-            width: 3px; height: 1.4em;
-            background: var(--primary);
-            margin-left: 2px;
-            animation: blink 1s infinite;
-            vertical-align: text-bottom;
-        }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-        .hero-desc {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            max-width: 550px;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .btn {
-            padding: 0.9rem 2rem;
-            border-radius: 10px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.95rem;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-glow {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--darker);
-            box-shadow: 0 0 30px var(--primary-glow);
-        }
-        .btn-glow:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 50px var(--primary-glow), 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--text);
-            border: 2px solid var(--card-border);
-        }
-        .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
-        }
-
-        /* Hero Right - 3D Card Stack */
-        .hero-right {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px;
-            animation: fadeInRight 1s ease 0.3s both;
-        }
-
-        .tech-stack-3d {
-            position: relative;
-            width: 320px;
-            height: 320px;
-            transform-style: preserve-3d;
-            animation: rotate3d 25s linear infinite;
-        }
-        @keyframes rotate3d {
-            0% { transform: rotateY(0deg) rotateX(10deg); }
-            100% { transform: rotateY(360deg) rotateX(10deg); }
-        }
-
-        .tech-orbit {
-            position: absolute;
-            width: 60px; height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            font-size: 1.8rem;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
-        }
-        .tech-orbit:nth-child(1) { color: #f89820; transform: rotateY(0deg) translateZ(140px); }
-        .tech-orbit:nth-child(2) { color: #6db33f; transform: rotateY(60deg) translateZ(140px); }
-        .tech-orbit:nth-child(3) { color: #00d4ff; transform: rotateY(120deg) translateZ(140px); }
-        .tech-orbit:nth-child(4) { color: #a855f7; transform: rotateY(180deg) translateZ(140px); }
-        .tech-orbit:nth-child(5) { color: #f472b6; transform: rotateY(240deg) translateZ(140px); }
-        .tech-orbit:nth-child(6) { color: #f7df1e; transform: rotateY(300deg) translateZ(140px); }
-
-        .tech-center {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px; height: 100px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: var(--darker);
-            box-shadow: 0 0 40px var(--primary-glow);
-            animation: pulseGlow 3s ease-in-out infinite;
-        }
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 40px var(--primary-glow); }
-            50% { box-shadow: 0 0 70px var(--primary-glow), 0 0 100px var(--secondary-glow); }
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 2.5rem;
-            margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--card-border);
-        }
-        .stat {
-            display: flex;
-            flex-direction: column;
-        }
-        .stat-num {
-            font-size: 2.2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-        }
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-top: 0.3rem;
-        }
-
-        /* ===== SECTION COMMON ===== */
-        section {
-            padding: 6rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        .section-tag {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: rgba(0, 212, 255, 0.08);
-            border: 1px solid rgba(0, 212, 255, 0.15);
-            border-radius: 50px;
-            color: var(--primary);
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-        .section-header h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 0.8rem;
-        }
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* ===== ABOUT ===== */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        .about-text p {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            line-height: 1.9;
-            margin-bottom: 1.2rem;
-        }
-        .about-text strong {
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        .feature-box {
-            padding: 1.2rem;
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: all 0.3s;
-        }
-        .feature-box:hover {
-            border-color: rgba(0, 212, 255, 0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        .feature-icon {
-            width: 45px; height: 45px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        .feature-icon.cyan { background: rgba(0, 212, 255, 0.1); color: var(--primary); }
-        .feature-icon.purple { background: rgba(168, 85, 247, 0.1); color: var(--secondary); }
-        .feature-icon.pink { background: rgba(244, 114, 182, 0.1); color: var(--accent); }
-        .feature-icon.green { background: rgba(34, 197, 94, 0.1); color: var(--success); }
-        .feature-box span {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        /* Code Window */
-        .code-window {
-            background: var(--dark);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-        }
-        .code-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1rem;
-            background: rgba(255,255,255,0.02);
-            border-bottom: 1px solid var(--card-border);
-        }
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
-        .dot-red { background: #ff5f56; }
-        .dot-yellow { background: #ffbd2e; }
-        .dot-green { background: #27c93f; }
-        .code-title {
-            margin-left: 0.5rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .code-body {
-            padding: 1.5rem;
-            font-family: 'Fira Code', 'Courier New', monospace;
-            font-size: 0.85rem;
-            line-height: 1.8;
-        }
-        .code-line { display: flex; }
-        .line-num {
-            color: var(--text-muted);
-            width: 30px;
-            text-align: right;
-            margin-right: 1rem;
-            opacity: 0.5;
-        }
-        .kw { color: #c678dd; }
-        .str { color: #98c379; }
-        .fn { color: #61afef; }
-        .cm { color: #5c6370; font-style: italic; }
-        .cls { color: #e5c07b; }
-        .var { color: #d19a66; }
-
-        /* ===== SKILLS ===== */
-        .skills-wrapper {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-        .skill-card {
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 1.8rem;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .skill-card:hover::before { opacity: 1; }
-        .skill-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 212, 255, 0.15);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(0, 212, 255, 0.05);
-        }
-        .skill-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-        }
-        .skill-icon {
-            width: 50px; height: 50px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            flex-shrink: 0;
-        }
-        .skill-icon.java { background: rgba(244, 114, 182, 0.1); color: var(--accent); }
-        .skill-icon.api { background: rgba(0, 212, 255, 0.1); color: var(--primary); }
-        .skill-icon.db { background: rgba(168, 85, 247, 0.1); color: var(--secondary); }
-        .skill-icon.cloud { background: rgba(34, 197, 94, 0.1); color: var(--success); }
-        .skill-icon.front { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
-        .skill-icon.tool { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
-
-        .skill-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-        .skill-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .skill-tag {
-            padding: 0.35rem 0.7rem;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--card-border);
-            border-radius: 6px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            transition: all 0.3s;
-        }
-        .skill-tag:hover {
-            background: rgba(0, 212, 255, 0.08);
-            border-color: rgba(0, 212, 255, 0.2);
-            color: var(--primary);
-            transform: scale(1.05);
-        }
-
-        /* ===== EXPERIENCE ===== */
-        .exp-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        .exp-card {
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 2rem;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-        .exp-card::after {
-            content: '';
-            position: absolute;
-            top: 0; right: 0;
-            width: 150px; height: 150px;
-            background: radial-gradient(circle, var(--primary-glow), transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-        .exp-card:hover::after { opacity: 0.3; }
-        .exp-card:hover {
-            border-color: rgba(0, 212, 255, 0.15);
-            transform: translateX(5px);
-        }
-
-        .exp-timeline {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .exp-dot {
-            width: 16px; height: 16px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            box-shadow: 0 0 15px var(--primary-glow);
-            flex-shrink: 0;
-        }
-        .exp-line {
-            width: 2px;
-            flex-grow: 1;
-            background: linear-gradient(to bottom, var(--primary), transparent);
-            border-radius: 2px;
-        }
-        .exp-date {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        .exp-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.3rem;
-        }
-        .exp-company {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-        .exp-company i { font-size: 0.8rem; }
-        .exp-list {
-            list-style: none;
-        }
-        .exp-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.8rem;
-            position: relative;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        .exp-list li::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0.9rem;
-            width: 8px; height: 8px;
-            border-radius: 2px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            transform: rotate(45deg);
-        }
-
-        /* ===== PROJECTS ===== */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-        .project-card {
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 212, 255, 0.2);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-        }
-        .project-visual {
-            height: 160px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .project-visual.bg-bank {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1));
-        }
-        .project-visual.bg-realestate {
-            background: linear-gradient(135deg, rgba(244, 114, 182, 0.1), rgba(0, 212, 255, 0.1));
-        }
-        .project-visual.bg-asset {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(0, 212, 255, 0.1));
-        }
-        .project-visual.bg-payment {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(244, 114, 182, 0.1));
-        }
-        .project-icon-main {
-            font-size: 3.5rem;
-            opacity: 0.8;
-            filter: drop-shadow(0 0 20px var(--primary-glow));
-        }
-        .project-visual .floating-icons {
-            position: absolute;
-            width: 100%; height: 100%;
-        }
-        .floating-icons .fi {
-            position: absolute;
-            font-size: 1.2rem;
-            opacity: 0.3;
-            animation: floatIcon 4s ease-in-out infinite;
-        }
-        .fi-1 { top: 20%; left: 15%; animation-delay: 0s; }
-        .fi-2 { top: 60%; right: 15%; animation-delay: 1s; }
-        .fi-3 { bottom: 20%; left: 40%; animation-delay: 2s; }
-        @keyframes floatIcon {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .project-body {
-            padding: 1.5rem;
-            flex-grow: 1;
-        }
-        .project-body h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-        .project-body p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.7;
-        }
-        .project-tech-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-top: 1rem;
-        }
-        .pt-tag {
-            padding: 0.25rem 0.6rem;
-            background: rgba(0, 212, 255, 0.06);
-            border: 1px solid rgba(0, 212, 255, 0.1);
-            border-radius: 4px;
-            font-size: 0.7rem;
-            color: var(--primary);
-            font-weight: 500;
-        }
-        .project-footer {
-            padding: 1rem 1.5rem;
-            border-top: 1px solid var(--card-border);
-            display: flex;
-            gap: 1rem;
-        }
-        .project-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .project-badge i { color: var(--success); font-size: 0.7rem; }
-
-        /* ===== EDU & CERTS ===== */
-        .edu-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        .edu-card {
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.4s;
-        }
-        .edu-card:hover {
-            border-color: rgba(0, 212, 255, 0.15);
-            transform: translateY(-5px);
-        }
-        .edu-card-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .edu-card-icon {
-            width: 55px; height: 55px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-        .edu-card-icon.grad { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(168, 85, 247, 0.15)); color: var(--primary); }
-        .edu-card-icon.cert { background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(245, 158, 11, 0.15)); color: var(--accent); }
-        .edu-card h3 {
-            font-size: 1.2rem;
-        }
-        .edu-card h3 span {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 400;
-            margin-top: 0.2rem;
-        }
-
-        .edu-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--card-border);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        .edu-item:last-child { border-bottom: none; }
-        .edu-item-info h4 {
-            font-size: 1rem;
-            margin-bottom: 0.2rem;
-        }
-        .edu-item-info p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-        .edu-year {
-            padding: 0.3rem 0.7rem;
-            background: rgba(0, 212, 255, 0.08);
-            border-radius: 6px;
-            font-size: 0.75rem;
-            color: var(--primary);
-            font-weight: 600;
-            white-space: nowrap;
-        }
-        .cert-row {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid var(--card-border);
-        }
-        .cert-row:last-child { border-bottom: none; }
-        .cert-row i {
-            color: #fbbf24;
-            font-size: 1.1rem;
-        }
-        .cert-row span {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* ===== CONTACT ===== */
-        .contact-wrapper {
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .contact-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, var(--primary-glow), transparent 40%);
-            opacity: 0.15;
-            pointer-events: none;
-        }
-        .contact-wrapper h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-        .contact-wrapper p {
-            color: var(--text-muted);
-            max-width: 500px;
-            margin: 0 auto 2rem;
-            font-size: 1.05rem;
-            position: relative;
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .contact-item {
-            padding: 1.2rem;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .contact-item:hover {
-            border-color: var(--primary);
-            background: rgba(0, 212, 255, 0.05);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
-        }
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-        .contact-item span {
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            text-align: center;
-            padding: 3rem;
-            border-top: 1px solid var(--card-border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        footer .heart {
-            color: #ef4444;
-            animation: heartbeat 1.5s infinite;
-        }
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .hero-inner { grid-template-columns: 1fr; text-align: center; }
-            .hero-left { order: 2; }
-            .hero-right { order: 1; }
-            .hero-desc { margin: 0 auto 2rem; }
-            .hero-buttons { justify-content: center; }
-            .hero-stats { justify-content: center; }
-            .tech-stack-3d { width: 260px; height: 260px; }
-            .tech-orbit { width: 50px; height: 50px; font-size: 1.4rem; }
-            .tech-orbit:nth-child(n) { transform: rotateY(calc(var(--i, 0) * 60deg)) translateZ(110px); }
-            .about-grid { grid-template-columns: 1fr; }
-            .skills-wrapper { grid-template-columns: repeat(2, 1fr); }
-            .projects-grid { grid-template-columns: 1fr; }
-            .edu-grid { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-toggle { display: block; }
-            .hero h1 { font-size: 2.5rem; }
-            .section-header h2 { font-size: 2rem; }
-            .skills-wrapper { grid-template-columns: 1fr; }
-            .exp-card { grid-template-columns: 1fr; }
-            .exp-timeline { display: none; }
-            .contact-wrapper { padding: 2rem; }
-            .contact-grid { grid-template-columns: 1fr 1fr; }
-            .about-features { grid-template-columns: 1fr; }
-        }
-    </style>
-<base target="_blank">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/manjeet.css">
 </head>
 <body>
     <canvas class="bg-canvas" id="particleCanvas"></canvas>
@@ -1044,7 +44,7 @@
                     <span id="typewriter"></span><span class="cursor"></span>
                 </div>
                 <p class="hero-desc">
-                    Results-driven <strong>Java Full Stack Developer</strong> with 3+ years of experience designing scalable enterprise applications, banking systems, and cloud-hosted platforms using Java, Spring Boot, and Microservices.
+                    Full-Stack Developer with <strong>3+ years</strong> of hands-on experience in banking and fintech applications. Proven expertise in designing large-scale API systems for SMS, email, and IVR communication pipelines handling high-volume financial transactions.
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-glow">
@@ -1064,15 +64,15 @@
                         <div class="stat-label">Projects Delivered</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-num">5+</div>
+                        <div class="stat-num">6+</div>
                         <div class="stat-label">Core Technologies</div>
                     </div>
                 </div>
             </div>
             <div class="hero-right">
                 <div class="tech-stack-3d">
-                    <div class="tech-orbit" style="--i:0"><i class="fab fa-java"></i></div>
-                    <div class="tech-orbit" style="--i:1"><i class="fas fa-leaf"></i></div>
+                    <div class="tech-orbit" style="--i:0"><i class="fab fa-php"></i></div>
+                    <div class="tech-orbit" style="--i:1"><i class="fab fa-react"></i></div>
                     <div class="tech-orbit" style="--i:2"><i class="fab fa-aws"></i></div>
                     <div class="tech-orbit" style="--i:3"><i class="fab fa-docker"></i></div>
                     <div class="tech-orbit" style="--i:4"><i class="fab fa-vuejs"></i></div>
@@ -1092,8 +92,8 @@
         </div>
         <div class="about-grid reveal">
             <div class="about-text">
-                <p>I am a <strong>Java Full Stack Developer</strong> with a proven track record of delivering high-volume banking communication systems, RESTful APIs, and cloud-hosted platforms on <strong>AWS</strong>.</p>
-                <p>Proficient across the full stack with <strong>Vue.js</strong> front-end expertise, <strong>Redis</strong> caching strategies, <strong>Docker</strong> containerization, and <strong>Linux</strong> server administration. I excel at production support, performance tuning, and system optimization for mission-critical financial applications.</p>
+                <p>I am a <strong>Full-Stack Developer</strong> with a proven track record of delivering high-volume banking communication systems, RESTful APIs, and cloud-hosted platforms on <strong>AWS</strong>.</p>
+                <p>Specialized in <strong>PHP/Laravel</strong>, <strong>React</strong>, <strong>Java Spring Boot</strong>, <strong>Python</strong>, and cloud deployment. Adept at building production systems from scratch, optimizing backend performance with <strong>Redis</strong> caching, and delivering reliable, secure solutions in regulated financial environments.</p>
                 <div class="about-features">
                     <div class="feature-box">
                         <div class="feature-icon cyan"><i class="fas fa-server"></i></div>
@@ -1105,11 +105,11 @@
                     </div>
                     <div class="feature-box">
                         <div class="feature-icon pink"><i class="fas fa-database"></i></div>
-                        <span>Database Optimization</span>
+                        <span>Redis Caching & Queues</span>
                     </div>
                     <div class="feature-box">
                         <div class="feature-icon green"><i class="fas fa-gauge-high"></i></div>
-                        <span>Performance Tuning</span>
+                        <span>High-Volume Systems</span>
                     </div>
                 </div>
             </div>
@@ -1123,10 +123,10 @@
                 <div class="code-body">
                     <div class="code-line"><span class="line-num">1</span><span class="kw">public class</span> <span class="cls">Developer</span> {</div>
                     <div class="code-line"><span class="line-num">2</span>&nbsp;&nbsp;<span class="kw">private</span> <span class="cls">String</span> <span class="var">name</span> = <span class="str">"Manjeet Kumar"</span>;</div>
-                    <div class="code-line"><span class="line-num">3</span>&nbsp;&nbsp;<span class="kw">private</span> <span class="cls">String</span> <span class="var">role</span> = <span class="str">"Full Stack Dev"</span>;</div>
+                    <div class="code-line"><span class="line-num">3</span>&nbsp;&nbsp;<span class="kw">private</span> <span class="cls">String</span> <span class="var">role</span> = <span class="str">"Full-Stack Dev"</span>;</div>
                     <div class="code-line"><span class="line-num">4</span>&nbsp;&nbsp;<span class="kw">private</span> <span class="cls">String</span>[] <span class="var">stack</span> = {</div>
-                    <div class="code-line"><span class="line-num">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Java"</span>, <span class="str">"Spring Boot"</span>, <span class="str">"AWS"</span>,</div>
-                    <div class="code-line"><span class="line-num">6</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Vue.js"</span>, <span class="str">"MySQL"</span>, <span class="str">"Redis"</span></div>
+                    <div class="code-line"><span class="line-num">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"PHP/Laravel"</span>, <span class="str">"React"</span>, <span class="str">"Java"</span>,</div>
+                    <div class="code-line"><span class="line-num">6</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Python"</span>, <span class="str">"AWS"</span>, <span class="str">"Redis"</span></div>
                     <div class="code-line"><span class="line-num">7</span>&nbsp;&nbsp;};</div>
                     <div class="code-line"><span class="line-num">8</span>&nbsp;&nbsp;<span class="kw">public</span> <span class="cls">String</span> <span class="fn">getPassion</span>() {</div>
                     <div class="code-line"><span class="line-num">9</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">"Building scalable systems"</span>;</div>
@@ -1138,113 +138,271 @@
         </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- SKILLS - ENHANCED -->
     <section id="skills">
         <div class="section-header reveal">
             <div class="section-tag">Expertise</div>
             <h2>Technical <span class="gradient-text">Skills</span></h2>
             <p>Technologies and tools I use to build world-class applications</p>
         </div>
-        <div class="skills-wrapper reveal">
-            <div class="skill-card">
-                <div class="skill-header">
-                    <div class="skill-icon java"><i class="fab fa-java"></i></div>
+        <div class="skills-main-grid reveal">
+            <!-- Backend -->
+            <div class="skill-category-card">
+                <div class="skill-cat-header">
+                    <div class="skill-cat-icon backend"><i class="fas fa-server"></i></div>
                     <div>
-                        <h3>Core & Backend</h3>
-                        <p>Server-side development</p>
+                        <h3>Backend Development</h3>
+                        <p>Server-side & API architecture</p>
                     </div>
                 </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">Spring Boot</span>
-                    <span class="skill-tag">Spring MVC</span>
-                    <span class="skill-tag">Spring Scheduler</span>
-                    <span class="skill-tag">Hibernate</span>
-                    <span class="skill-tag">JPA</span>
-                    <span class="skill-tag">PHP</span>
-                    <span class="skill-tag">Laravel</span>
-                    <span class="skill-tag">Python</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-header">
-                    <div class="skill-icon api"><i class="fas fa-network-wired"></i></div>
-                    <div>
-                        <h3>APIs & Architecture</h3>
-                        <p>System design & integration</p>
+                <div class="skill-items">
+                    <div class="skill-row">
+                        <span class="skill-name">PHP / Laravel</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95%"></div></div>
+                        <span class="skill-level">95%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Java</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Spring Boot</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+                        <span class="skill-level">80%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75%"></div></div>
+                        <span class="skill-level">75%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Node.js</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70%"></div></div>
+                        <span class="skill-level">70%</span>
                     </div>
                 </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">RESTful APIs</span>
-                    <span class="skill-tag">Microservices</span>
-                    <span class="skill-tag">JSON</span>
-                    <span class="skill-tag">Postman</span>
-                    <span class="skill-tag">API Testing</span>
-                    <span class="skill-tag">MVC Architecture</span>
+                <div class="skill-tags-inline">
+                    <span class="skill-tag-sm">MVC</span>
+                    <span class="skill-tag-sm">APIs</span>
+                    <span class="skill-tag-sm">Queues</span>
+                    <span class="skill-tag-sm">Cron Jobs</span>
+                    <span class="skill-tag-sm">Hibernate</span>
+                    <span class="skill-tag-sm">JPA</span>
                 </div>
             </div>
-            <div class="skill-card">
-                <div class="skill-header">
-                    <div class="skill-icon db"><i class="fas fa-database"></i></div>
+
+            <!-- Frontend -->
+            <div class="skill-category-card">
+                <div class="skill-cat-header">
+                    <div class="skill-cat-icon frontend"><i class="fas fa-laptop-code"></i></div>
+                    <div>
+                        <h3>Frontend Development</h3>
+                        <p>User interface & experience</p>
+                    </div>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-row">
+                        <span class="skill-name">React.js</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Vue.js</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88%"></div></div>
+                        <span class="skill-level">88%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">HTML5 / CSS3</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Bootstrap</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+                        <span class="skill-level">85%</span>
+                    </div>
+                </div>
+                <div class="skill-tags-inline">
+                    <span class="skill-tag-sm">ES6+</span>
+                    <span class="skill-tag-sm">Responsive</span>
+                    <span class="skill-tag-sm">SPA</span>
+                    <span class="skill-tag-sm">DOM</span>
+                </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="skill-category-card">
+                <div class="skill-cat-header">
+                    <div class="skill-cat-icon database"><i class="fas fa-database"></i></div>
                     <div>
                         <h3>Databases & Caching</h3>
                         <p>Data storage & retrieval</p>
                     </div>
                 </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">Redis</span>
-                    <span class="skill-tag">Queue Processing</span>
+                <div class="skill-items">
+                    <div class="skill-row">
+                        <span class="skill-name">MySQL</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92%"></div></div>
+                        <span class="skill-level">92%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Redis</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88%"></div></div>
+                        <span class="skill-level">88%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">SQL</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Queue Processing</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+                        <span class="skill-level">85%</span>
+                    </div>
+                </div>
+                <div class="skill-tags-inline">
+                    <span class="skill-tag-sm">Caching</span>
+                    <span class="skill-tag-sm">Pub/Sub</span>
+                    <span class="skill-tag-sm">Query Opt.</span>
+                    <span class="skill-tag-sm">Indexing</span>
                 </div>
             </div>
-            <div class="skill-card">
-                <div class="skill-header">
-                    <div class="skill-icon cloud"><i class="fas fa-cloud"></i></div>
+
+            <!-- Cloud & DevOps -->
+            <div class="skill-category-card">
+                <div class="skill-cat-header">
+                    <div class="skill-cat-icon cloud"><i class="fas fa-cloud"></i></div>
                     <div>
                         <h3>Cloud & DevOps</h3>
                         <p>Infrastructure & deployment</p>
                     </div>
                 </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">AWS EC2</span>
-                    <span class="skill-tag">AWS S3</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">Linux</span>
-                    <span class="skill-tag">Ubuntu</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-header">
-                    <div class="skill-icon front"><i class="fas fa-laptop-code"></i></div>
-                    <div>
-                        <h3>Frontend</h3>
-                        <p>User interface development</p>
+                <div class="skill-items">
+                    <div class="skill-row">
+                        <span class="skill-name">AWS EC2</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">AWS S3</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88%"></div></div>
+                        <span class="skill-level">88%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Docker</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+                        <span class="skill-level">80%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Linux / Ubuntu</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82%"></div></div>
+                        <span class="skill-level">82%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Git / GitHub</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+                        <span class="skill-level">90%</span>
                     </div>
                 </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Vue.js</span>
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">Bootstrap</span>
+                <div class="skill-tags-inline">
+                    <span class="skill-tag-sm">CI/CD</span>
+                    <span class="skill-tag-sm">Containerization</span>
+                    <span class="skill-tag-sm">Server Admin</span>
                 </div>
             </div>
-            <div class="skill-card">
-                <div class="skill-header">
-                    <div class="skill-icon tool"><i class="fas fa-chart-line"></i></div>
+
+            <!-- APIs & Integration -->
+            <div class="skill-category-card">
+                <div class="skill-cat-header">
+                    <div class="skill-cat-icon api"><i class="fas fa-plug"></i></div>
                     <div>
-                        <h3>Monitoring & Tools</h3>
-                        <p>Observability & automation</p>
+                        <h3>APIs & Integration</h3>
+                        <p>Third-party services & protocols</p>
                     </div>
                 </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">New Relic</span>
-                    <span class="skill-tag">Sentry</span>
-                    <span class="skill-tag">Laravel Telescope</span>
-                    <span class="skill-tag">Cron Jobs</span>
-                    <span class="skill-tag">Bulk SMS/Email</span>
+                <div class="skill-items">
+                    <div class="skill-row">
+                        <span class="skill-name">RESTful APIs</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95%"></div></div>
+                        <span class="skill-level">95%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">SMS Gateway</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Email APIs</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88%"></div></div>
+                        <span class="skill-level">88%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">IVR APIs</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Payment Gateway</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+                        <span class="skill-level">80%</span>
+                    </div>
+                </div>
+                <div class="skill-tags-inline">
+                    <span class="skill-tag-sm">SMTP/SES</span>
+                    <span class="skill-tag-sm">Retry Logic</span>
+                    <span class="skill-tag-sm">Fallback</span>
+                    <span class="skill-tag-sm">Webhooks</span>
+                </div>
+            </div>
+
+            <!-- Tools & Other -->
+            <div class="skill-category-card">
+                <div class="skill-cat-header">
+                    <div class="skill-cat-icon tools"><i class="fas fa-toolbox"></i></div>
+                    <div>
+                        <h3>Tools & Automation</h3>
+                        <p>Monitoring, automation & security</p>
+                    </div>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-row">
+                        <span class="skill-name">Cron Automation</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92%"></div></div>
+                        <span class="skill-level">92%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">RBAC / Security</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">New Relic</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+                        <span class="skill-level">80%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Sentry</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82%"></div></div>
+                        <span class="skill-level">82%</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Laravel Telescope</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88%"></div></div>
+                        <span class="skill-level">88%</span>
+                    </div>
+                </div>
+                <div class="skill-tags-inline">
+                    <span class="skill-tag-sm">Bulk Messaging</span>
+                    <span class="skill-tag-sm">Hotfix Deploy</span>
+                    <span class="skill-tag-sm">Production Support</span>
+                    <span class="skill-tag-sm">Performance Tuning</span>
                 </div>
             </div>
         </div>
@@ -1265,18 +423,19 @@
                     <div class="exp-line"></div>
                 </div>
                 <div class="exp-content">
-                    <h3>Software Developer</h3>
+                    <h3>Software Engineer</h3>
                     <div class="exp-company">
                         <i class="fas fa-building"></i>
                         VeUp Technologies Pvt. Ltd. — Ujjivan Small Finance Bank
                     </div>
                     <ul class="exp-list">
-                        <li>Architected Java Spring Boot microservices for banking notification & communication systems handling high-volume financial transaction alerts</li>
-                        <li>Designed RESTful APIs using Java Spring Boot and PHP Laravel for seamless integration across banking modules and third-party services</li>
-                        <li>Built large-scale SMS/email automation engine with Spring Scheduler (cron jobs), processing thousands of messages daily</li>
-                        <li>Integrated Redis caching layer for dashboard APIs, significantly reducing response latency under peak load</li>
-                        <li>Deployed and managed infrastructure on AWS EC2 and S3 for high-availability production banking systems</li>
-                        <li>Wrote Python scripts for automation tasks and data processing workflows</li>
+                        <li>Designed and built a large-scale API system from scratch to handle bulk SMS and email communications for Ujjivan Small Finance Bank, processing high volumes of transactional and promotional messages</li>
+                        <li>Developed dynamic banking communication templates for account alerts, OTPs, loan notifications, and marketing campaigns with support for personalized data</li>
+                        <li>Architected and deployed automated cron jobs to schedule, queue, and retry bulk message delivery ensuring zero message loss and delivery reliability across peak transaction periods</li>
+                        <li>Built the IVR web platform (ivr.veup.io) from scratch using React (frontend) and Python (backend), enabling bank staff to manage interactive voice response workflows through a web interface</li>
+                        <li>Implemented Redis-backed queue and caching layer for the messaging pipeline, reducing API response times and preventing bottlenecks during high-volume financial transactions</li>
+                        <li>Integrated third-party SMS gateway and email service provider APIs with fallback handling, retry logic, and delivery status tracking</li>
+                        <li>Provided production support and hotfix deployment for mission-critical banking communication services monitored via Laravel Telescope and Sentry</li>
                     </ul>
                 </div>
             </div>
@@ -1290,15 +449,14 @@
                     <h3>Software Developer</h3>
                     <div class="exp-company">
                         <i class="fas fa-building"></i>
-                        Bhavitha TechSolutions Pvt. Ltd. — Baker Real Estate (Canada)
+                        Bhavitha TechSolutions Pvt. Ltd. — Baker Real Estate Inc. (Canada)
                     </div>
                     <ul class="exp-list">
-                        <li>Built Java Spring Boot RESTful APIs powering backend of a large-scale real estate platform serving Canadian clients</li>
-                        <li>Implemented Hibernate ORM with JPA for efficient MySQL database interaction and optimized query execution</li>
-                        <li>Developed features using PHP Laravel MVC alongside Java microservices in a hybrid backend environment</li>
-                        <li>Leveraged Redis caching and AWS EC2/S3 for scalable cloud hosting and file storage</li>
-                        <li>Implemented bug tracking pipelines using New Relic, Sentry, and Laravel Telescope</li>
-                        <li>Managed Linux/Ubuntu servers and Docker-based deployments for consistent staging and production</li>
+                        <li>Built and maintained RESTful API services for a Canada-based real estate platform using PHP Laravel, handling property listings, user management, and document storage</li>
+                        <li>Developed automated cron jobs for scheduled email notifications, report generation, and data sync between integrated third-party real estate data sources</li>
+                        <li>Implemented Redis caching for frequently accessed property and user data, reducing database load and improving API response times</li>
+                        <li>Deployed and managed the application on AWS EC2 with static assets and media stored on S3, ensuring high availability and scalability</li>
+                        <li>Built Vue.js-powered frontend modules for property search, filtering, and user dashboards with responsive HTML/CSS design</li>
                     </ul>
                 </div>
             </div>
@@ -1308,15 +466,17 @@
                     <div class="exp-dot"></div>
                 </div>
                 <div class="exp-content">
-                    <h3>Software Developer</h3>
+                    <h3>Software Engineer</h3>
                     <div class="exp-company">
                         <i class="fas fa-building"></i>
-                        Kods Technologies Pvt. Ltd. — Art of Living Projects
+                        Kods Technologies Pvt. Ltd. — Art of Living Foundation
                     </div>
                     <ul class="exp-list">
-                        <li><strong>Pragti (Employee Management):</strong> Designed web-based office employee management system using HTML, CSS, Laravel, MySQL, and Bootstrap with secure authentication and dynamic reporting</li>
-                        <li><strong>Samruddhi (Asset Management):</strong> Developed asset tracking modules with robust database design for organizational asset monitoring</li>
-                        <li><strong>Sanidhya (Payment & Ticketing):</strong> Built secure payment processing and automated ticket generation platform using PHP Laravel, significantly reducing manual processing effort</li>
+                        <li>Built full-stack web applications from scratch for Art of Living: an office employee management system, an asset tracking system, and a payment & ticket generation platform</li>
+                        <li>Designed and implemented a bulk email and notification API for the payment platform, automating ticket delivery and payment confirmation messages to thousands of event attendees</li>
+                        <li>Developed cron-based automation for scheduled reports, asset depreciation calculations, and employee attendance tracking</li>
+                        <li>Built secure user authentication and role-based access control (RBAC) using Laravel with MySQL as the primary data store</li>
+                        <li>Delivered the payment gateway integration (Sanidhya project) end-to-end from API design to frontend (React/Bootstrap) to production deployment, significantly reducing manual ticketing effort</li>
                     </ul>
                 </div>
             </div>
@@ -1332,78 +492,78 @@
         </div>
         <div class="projects-grid reveal">
             <div class="project-card">
-                <div class="project-visual bg-bank">
+                <div class="project-visual bg-ivr">
                     <div class="floating-icons">
-                        <i class="fas fa-bell fi fi-1" style="color: var(--primary)"></i>
-                        <i class="fas fa-envelope fi fi-2" style="color: var(--secondary)"></i>
-                        <i class="fas fa-mobile-screen fi fi-3" style="color: var(--accent)"></i>
+                        <i class="fas fa-phone fi fi-1" style="color: var(--primary)"></i>
+                        <i class="fas fa-headset fi fi-2" style="color: var(--secondary)"></i>
+                        <i class="fas fa-wave-square fi fi-3" style="color: var(--accent)"></i>
                     </div>
-                    <i class="fas fa-building-columns project-icon-main" style="color: var(--primary)"></i>
+                    <i class="fas fa-tower-broadcast project-icon-main" style="color: var(--primary)"></i>
                 </div>
                 <div class="project-body">
-                    <h3>Banking Notification System</h3>
-                    <p>Developed backend microservices and REST APIs for automated banking alert and notification delivery (SMS/email) for Ujjivan Small Finance Bank. Implemented Spring Scheduler for cron-based automation and Redis for high-throughput queue processing ensuring reliable message delivery.</p>
+                    <h3>IVR Web Platform (ivr.veup.io)</h3>
+                    <p>Independently designed and developed a full web platform for managing IVR (Interactive Voice Response) call flows for Ujjivan Small Finance Bank, replacing manual telephony configuration with a self-service web interface.</p>
                     <div class="project-tech-row">
-                        <span class="pt-tag">Java</span>
-                        <span class="pt-tag">Spring Boot</span>
+                        <span class="pt-tag">React</span>
+                        <span class="pt-tag">Python</span>
+                        <span class="pt-tag">Laravel</span>
                         <span class="pt-tag">MySQL</span>
-                        <span class="pt-tag">Redis</span>
                         <span class="pt-tag">AWS</span>
                     </div>
                 </div>
                 <div class="project-footer">
-                    <span class="project-badge"><i class="fas fa-circle"></i> Enterprise Scale</span>
+                    <span class="project-badge"><i class="fas fa-circle"></i> Built from Scratch</span>
                     <span class="project-badge"><i class="fas fa-circle"></i> Production Live</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-visual bg-bank">
+                    <div class="floating-icons">
+                        <i class="fas fa-bell fi fi-1" style="color: var(--accent)"></i>
+                        <i class="fas fa-envelope fi fi-2" style="color: var(--primary)"></i>
+                        <i class="fas fa-mobile-screen fi fi-3" style="color: var(--secondary)"></i>
+                    </div>
+                    <i class="fas fa-building-columns project-icon-main" style="color: var(--accent)"></i>
+                </div>
+                <div class="project-body">
+                    <h3>Banking Bulk Messaging Engine</h3>
+                    <p>Architected a high-throughput messaging engine capable of processing large-scale SMS and email campaigns for banking customers, with cron scheduling, queue management, retry logic, and real-time delivery tracking.</p>
+                    <div class="project-tech-row">
+                        <span class="pt-tag">PHP</span>
+                        <span class="pt-tag">Laravel</span>
+                        <span class="pt-tag">Redis</span>
+                        <span class="pt-tag">MySQL</span>
+                        <span class="pt-tag">Java</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="project-badge"><i class="fas fa-circle"></i> High Throughput</span>
+                    <span class="project-badge"><i class="fas fa-circle"></i> Zero Message Loss</span>
                 </div>
             </div>
             <div class="project-card">
                 <div class="project-visual bg-realestate">
                     <div class="floating-icons">
-                        <i class="fas fa-house fi fi-1" style="color: var(--accent)"></i>
+                        <i class="fas fa-house fi fi-1" style="color: var(--success)"></i>
                         <i class="fas fa-map-location-dot fi fi-2" style="color: var(--primary)"></i>
                         <i class="fas fa-cloud fi fi-3" style="color: var(--secondary)"></i>
                     </div>
-                    <i class="fas fa-city project-icon-main" style="color: var(--accent)"></i>
+                    <i class="fas fa-city project-icon-main" style="color: var(--success)"></i>
                 </div>
                 <div class="project-body">
                     <h3>Baker Real Estate Platform</h3>
-                    <p>Built RESTful APIs and backend services for a Canada-based real estate platform. Implemented Hibernate ORM for data access layer, Redis caching for performance optimization, and AWS infrastructure for cloud hosting and document storage.</p>
+                    <p>Built RESTful APIs and backend services for a Canada-based real estate platform. Implemented Redis caching for performance optimization, and AWS infrastructure for cloud hosting and document storage.</p>
                     <div class="project-tech-row">
-                        <span class="pt-tag">Java</span>
-                        <span class="pt-tag">Spring Boot</span>
                         <span class="pt-tag">PHP Laravel</span>
+                        <span class="pt-tag">Vue.js</span>
                         <span class="pt-tag">MySQL</span>
                         <span class="pt-tag">Redis</span>
-                        <span class="pt-tag">AWS</span>
+                        <span class="pt-tag">AWS EC2/S3</span>
                     </div>
                 </div>
                 <div class="project-footer">
                     <span class="project-badge"><i class="fas fa-circle"></i> Canada Market</span>
                     <span class="project-badge"><i class="fas fa-circle"></i> Cloud Native</span>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-visual bg-asset">
-                    <div class="floating-icons">
-                        <i class="fas fa-box fi fi-1" style="color: var(--success)"></i>
-                        <i class="fas fa-barcode fi fi-2" style="color: var(--primary)"></i>
-                        <i class="fas fa-clipboard-check fi fi-3" style="color: var(--secondary)"></i>
-                    </div>
-                    <i class="fas fa-boxes-stacked project-icon-main" style="color: var(--success)"></i>
-                </div>
-                <div class="project-body">
-                    <h3>Asset Management System</h3>
-                    <p>Developed web modules for organizational asset tracking and management for Art of Living, enabling real-time monitoring and customized reporting with secure authentication and role-based access control.</p>
-                    <div class="project-tech-row">
-                        <span class="pt-tag">PHP Laravel</span>
-                        <span class="pt-tag">MySQL</span>
-                        <span class="pt-tag">Bootstrap</span>
-                        <span class="pt-tag">HTML/CSS</span>
-                    </div>
-                </div>
-                <div class="project-footer">
-                    <span class="project-badge"><i class="fas fa-circle"></i> Asset Tracking</span>
-                    <span class="project-badge"><i class="fas fa-circle"></i> Real-time</span>
                 </div>
             </div>
             <div class="project-card">
@@ -1416,11 +576,11 @@
                     <i class="fas fa-money-bill-wave project-icon-main" style="color: var(--warning)"></i>
                 </div>
                 <div class="project-body">
-                    <h3>Payment & Ticket Generation</h3>
-                    <p>Implemented secure payment gateway integration and automated ticket issuance workflow, streamlining user transactions and significantly reducing manual processing effort for Art of Living events.</p>
+                    <h3>Sanidhya — Payment & Ticket System</h3>
+                    <p>Built end-to-end from scratch — integrated secure payment gateway, automated bulk email ticket delivery, and self-service ticket management portal for large-scale Art of Living events.</p>
                     <div class="project-tech-row">
                         <span class="pt-tag">PHP Laravel</span>
-                        <span class="pt-tag">JavaScript</span>
+                        <span class="pt-tag">React</span>
                         <span class="pt-tag">MySQL</span>
                         <span class="pt-tag">Bootstrap</span>
                     </div>
@@ -1482,13 +642,13 @@
     <section id="contact">
         <div class="contact-wrapper reveal">
             <h2>Let's Build Something <span class="gradient-text">Amazing</span></h2>
-            <p>I'm currently open to new opportunities in Java Full Stack Development, Microservices Architecture, and Cloud Engineering roles.</p>
+            <p>I'm currently open to new opportunities in Full-Stack Development, API Architecture, and Cloud Engineering roles.</p>
             <div class="contact-grid">
-                <a href="tel:+9197097870" class="contact-item">
+                <a href="tel:+919709787061" class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <span>+91 97097 87870</span>
+                    <span>+91 97097 87061</span>
                 </a>
-                <a href="mailto:manjeet.kumar.dev@gmail.com" class="contact-item">
+                <a href="mailto:manjeetkumar050896@gmail.com" class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <span>Email Me</span>
                 </a>
@@ -1506,7 +666,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Made with <span class="heart">❤</span> by Manjeet Kumar | Java Full Stack Developer</p>
+        <p>Made with <span class="heart">❤</span> by Manjeet Kumar | Full-Stack Developer</p>
     </footer>
 
     <script>
@@ -1562,7 +722,6 @@
                 p.update();
                 p.draw();
             });
-            // Draw connections
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i + 1; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
@@ -1584,9 +743,10 @@
 
         // ===== TYPEWRITER EFFECT =====
         const phrases = [
-            "Java Full Stack Developer",
-            "Spring Boot Expert",
-            "Microservices Architect",
+            "Full-Stack Developer",
+            "PHP/Laravel Expert",
+            "React Developer",
+            "API Architect",
             "AWS Cloud Engineer",
             "Problem Solver"
         ];
@@ -1629,6 +789,18 @@
         }, { threshold: 0.1 });
         reveals.forEach(el => revealObserver.observe(el));
 
+        // ===== SKILL BARS ANIMATION =====
+        const skillBars = document.querySelectorAll('.skill-bar-fill');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = entry.target.getAttribute('data-width');
+                    entry.target.style.width = width;
+                }
+            });
+        }, { threshold: 0.2 });
+        skillBars.forEach(bar => skillObserver.observe(bar));
+
         // ===== MOBILE MENU =====
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
@@ -1656,7 +828,6 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Close mobile menu if open
                     const navLinks = document.querySelector('.nav-links');
                     if (window.innerWidth <= 768) navLinks.style.display = 'none';
                 }
